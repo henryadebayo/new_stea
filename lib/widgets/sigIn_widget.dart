@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 String? lastName;
@@ -105,12 +106,14 @@ Widget buidEmailAddressFormFeild() {
 
 Widget buidPhoneNumberFormFeild() {
   return TextFormField(
-      maxLength: 13,
+      inputFormatters: [
+        LengthLimitingTextInputFormatter(13)
+      ],
       keyboardType: TextInputType.phone,
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0.r),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Color(0xFF0E3E3E3),
           ),
         ),

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class testimonyItem extends StatelessWidget {
   String? testifyerName;
   String? testifyerText;
-  testimonyItem({this.testifyerName, this.testifyerText});
+  testimonyItem({Key? key, this.testifyerName, this.testifyerText}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +12,11 @@ class testimonyItem extends StatelessWidget {
       height: 200.h,
        width: double.infinity,
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage("images/beautiful-bright-blue-bloom-petals-dew.jpg"),
+        image: const DecorationImage(image: AssetImage("assets/images/beautiful-bright-blue-bloom-petals-dew.jpg"),
           fit: BoxFit.cover,
         ),
+
         borderRadius: BorderRadius.circular(20.0.r),
-       // boxShadow: [BoxShadow(blurRadius:8.0, offset: Offset(0, 3), color: Colors.blueAccent ),
-       // ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,7 +24,7 @@ class testimonyItem extends StatelessWidget {
           Padding(
             padding:  EdgeInsets.only(top: 20.0.h, left: 20.0.w),
             child: Text(
-              testifyerName!,
+              testifyerName ?? "no name",
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w900,
@@ -35,7 +34,7 @@ class testimonyItem extends StatelessWidget {
           Padding(
               padding: EdgeInsets.only(left: 10.0.w, right: 10.0.w, top: 14.0.h),
               child: Text(
-                testifyerText!,
+                testifyerText ?? "No test",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 15.0.sp,

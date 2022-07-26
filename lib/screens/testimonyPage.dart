@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import 'package:stea/Services/testimony_services.dart';
 import 'package:stea/widgets/const.dart';
 import 'package:stea/widgets/testimonyItem.dart';
-
 import '../view_models/testimony_view_models.dart';
 import 'AddTestimonyPage.dart';
 
@@ -19,7 +18,9 @@ class TestimonyPage extends StatelessWidget {
     this._context = context;
 
     TestimonyService testimonyService = TestimonyService();
+
       TestimonyVeiwModel testimonyVeiwModel = context.watch<TestimonyVeiwModel>();
+
 
 
     return Scaffold(
@@ -31,7 +32,8 @@ class TestimonyPage extends StatelessWidget {
             child: Text("Testimony"),
           ),
         ),
-        body:  Container(
+        body:
+        Container(
 
             child:
     RefreshIndicator(
@@ -72,13 +74,12 @@ class TestimonyPage extends StatelessWidget {
     }if(testimonyVeiwModel.testimonyError != null){
       return Container(
         child:  AlertDialog(
-
           content: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
               SizedBox(width: 16,),
-              Text("No Testimony to Display..."),
+              Text("Can't Load Testimony slide down to refresh...", style: TextStyle(color: KdarkBlueColour), ),
             ],
           ),
         ),

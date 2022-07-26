@@ -9,6 +9,8 @@ import 'package:stea/widgets/conWidgets.dart';
 import 'package:stea/widgets/const.dart';
 
 class AboutUs extends StatelessWidget {
+  const AboutUs({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,10 +18,10 @@ class AboutUs extends StatelessWidget {
         centerTitle:true,
          backgroundColor: KdarkBlueColour,
         title:Title(color: Colors.white,
-        child: Text("About Us"),)
+        child: const Text("About Us"),)
       ),
       body: ListView(
-        padding: EdgeInsets.only(left: 3.0, right: 3.0),
+        padding: const EdgeInsets.only(left: 3.0, right: 3.0),
         children: [ Column(
           //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
      crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,9 +29,9 @@ class AboutUs extends StatelessWidget {
             Container(
              height:280.0.h,
                 width:double.infinity.w,
-              decoration:BoxDecoration(
+              decoration:const BoxDecoration(
                   image:DecorationImage(
-                  image: AssetImage("images/BAM3232.jpg"),
+                  image: AssetImage("assets/images/BAM3232.jpg"),
           fit: BoxFit.cover,
         ),
               ),
@@ -41,8 +43,8 @@ class AboutUs extends StatelessWidget {
                 children: [
                   BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 2.5, sigmaY: 2.5),
-                    child: new Container(
-                      decoration: new BoxDecoration(color: Colors.white.withOpacity(0.0)),
+                    child: Container(
+                      decoration: BoxDecoration(color: Colors.white.withOpacity(0.0)),
                     ),
                   ),
                /*BackdropFilter(
@@ -55,7 +57,7 @@ class AboutUs extends StatelessWidget {
                    height: 200.0.h,
                     width: 200.0.w,
                     decoration:BoxDecoration(
-                      image: DecorationImage( image: AssetImage("images/stealogo.png"),
+                      image: const DecorationImage( image: AssetImage("assets/images/stealogo.png"),
                       fit:BoxFit.cover,
                       //color: Colors.green,
                     ),
@@ -79,7 +81,7 @@ class AboutUs extends StatelessWidget {
 
             SizedBox(height:5.0.h),
             aboutUsImageContainer(
-              imageName: "images/DAD5.jpg",
+              imageName: "assets/images/DAD5.jpg",
             ),
             aboutUsInfo(),
             SizedBox(height: 50.0.h,),
@@ -104,7 +106,7 @@ class AboutUs extends StatelessWidget {
             SizedBox(height: 50.0.h,),
             aboutUsNameH(labelName: "Bishop David Bakare",),
             SizedBox(height:5.0.h),
-            aboutUsImageContainer(imageName: "images/bb.jpg"),
+            aboutUsImageContainer(imageName: "assets/images/bb.jpg"),
             aboutUsInfo(),
             SizedBox(height: 50.0.h,),
             RoundWhiteButton(
@@ -121,25 +123,25 @@ class AboutUs extends StatelessWidget {
           Row(
             mainAxisAlignment:MainAxisAlignment.center,
             children: [
-              Icon(
+              const Icon(
                FontAwesomeIcons.instagram,
                 color:KdarkBlueColour,
                 size: 30.0,
               ),
               SizedBox(width: 10.0.w,),
-              Icon(
+              const Icon(
                 FontAwesomeIcons.facebook,
                 color:KdarkBlueColour,
                 size: 30.0,
               ),
               SizedBox(width: 10.0.w,),
-              Icon(
+              const Icon(
                 FontAwesomeIcons.twitter,
                 color:KdarkBlueColour,
                 size: 30.0,
               ),
               SizedBox(width: 10.0.w,),
-              Icon(
+              const Icon(
                 FontAwesomeIcons.youtube,
                 color:KdarkBlueColour,
                 size: 30.0,

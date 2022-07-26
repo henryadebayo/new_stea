@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stea/widgets/bottomNavigation.dart';
+import 'package:stea/screens/bottomNavigation.dart';
 import 'package:stea/widgets/sigIn_widget.dart';
-
 import 'alreadyMember.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -12,7 +11,6 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
    String? _firstname;
-
   final formKey = GlobalKey<FormState>();
   final mainKey = GlobalKey<ScaffoldState>();
 
@@ -23,19 +21,18 @@ class _RegisterPageState extends State<RegisterPage> {
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Container(
-            //height: MediaQuery.of(context).size.height,
             margin: EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
             child: Column(
               children: <Widget>[
                 Text(
                   "Fill In Your Details ",
                   style: TextStyle(
-                      fontSize: 20.0.sp,
+                      fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                       fontFamily: "GoogleSans",
                       color: Colors.blue[900]),
                 ),
-                SizedBox(height: 50.0.h),
+                SizedBox(height: 40.0.h),
                 Form(
                   key: formKey,
                   child: Column(children: <Widget>[

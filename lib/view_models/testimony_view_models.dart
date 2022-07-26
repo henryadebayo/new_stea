@@ -6,23 +6,23 @@ import 'package:stea/models/testimonyModel.dart';
 class TestimonyVeiwModel extends ChangeNotifier{
   late TestimonyService testimonyService ;
 
-  bool? _loading = false;
-  List<TestimonyModel>? _testimonyModel = [];
+  bool _loading = false;
+  List<TestimonyModel> _testimonyModel = [];
   TestimonyError? _testimonyError;
-  Widget? _testimonyPosted;
-  String? _details;
-  String? _name;
+  late Widget _testimonyPosted;
+  late String _details;
+ late String _name;
 
   TestimonyVeiwModel(){
 
     getTestimony();
   }
 
-  bool get loading => _loading!;
-  bool get loadingg => _loading!;
-  List<TestimonyModel> get testimonyModel => _testimonyModel!;
-  TestimonyError get testimonyError => _testimonyError!;
-  Widget get testimonyPostedResponse => _testimonyPosted!;
+  bool get loading => _loading;
+  bool get loadingg => _loading;
+  List<TestimonyModel> get testimonyModel => _testimonyModel;
+  TestimonyError? get testimonyError => _testimonyError;
+  Widget get testimonyPostedResponse => _testimonyPosted;
 
 
   setLoading(bool loading)async{
@@ -62,5 +62,17 @@ class TestimonyVeiwModel extends ChangeNotifier{
       setTestimonyError(testimonyError);
     }
     setLoading(false);
+  }
+
+
+  Future sendTestimony(name, details)async{
+    setLoadingg(true);
+    print("This is loading state 1:::${loading}");
+    var response = await TestimonyService.sendTes(name, details);
+    if(response is Success){
+      String message = response.response as String;
+    }
+    setLoadingg(false);
+    print("This is loading state 2:::${loading}");
   }
 }

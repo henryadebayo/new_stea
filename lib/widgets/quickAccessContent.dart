@@ -86,28 +86,43 @@ class quickAccessIcon extends StatelessWidget{
 }
 _bottomSheet(context) {
   showModalBottomSheet(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.transparent,
       //shape: ShapeBorder:,
       elevation: 10.0,
       context: context,
       builder: (BuildContext context) {
         return Wrap(children: <Widget>[
           Container(
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0))
+            ),
               child: Padding(
                 padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                child: Column(children: const <Widget>[
+                child: Column(children:  <Widget>[
                   Padding(
+                    padding: EdgeInsets.only(top: 15.0, bottom: 20.0),
+                    child: Container(
+                      height: 5.0,
+                      width: 70.0,
+                      decoration: BoxDecoration(
+                        color: KdarkBlueColour,
+                        borderRadius: BorderRadius.circular(20.0)
+                      ),
+                    ),
+                  ),
+                  const Padding(
                     padding: EdgeInsets.all(15.0),
                     child: Text("Donations",
                         style: TextStyle(
                             color: KdarkBlueColour,
                             fontSize: 30.0,
-                            fontWeight: FontWeight.bold)),
+                            fontWeight: FontWeight.w500)),
                   ),
                   SizedBox(height: 5.0,),
-                  Text("All Donation can be made to the "
-                      "STEA bank Account Number Below.", style:TextStyle(color: KdarkBlueColour,
-                    fontSize: 20.0, fontWeight: FontWeight.w400,
+                  Text("All Donation can be made to the\nSTEA bank Account Number Below.", style:TextStyle(color: KdarkBlueColour,
+                    fontSize: 15.0, fontWeight: FontWeight.w400,
                   ),),
                   SizedBox(height:40.0),
                   Text(KchurchAcc, style:TextStyle(color: KdarkBlueColour,
@@ -124,11 +139,11 @@ _bottomSheet(context) {
                   SizedBox(height: 40.0,),
                   Text("Contact Director of Finance"
                       " on.", style:TextStyle(color: Colors.black,
-                    fontSize: 20.0, fontWeight: FontWeight.w400,
+                    fontSize: 15.0, fontWeight: FontWeight.w400,
                   ),),
                   SizedBox(height: 10.0,),
                   Text(KdOfF, style:TextStyle(color:Colors.black,
-                    fontSize: 20.0, fontWeight: FontWeight.w900,
+                    fontSize: 15.0, fontWeight: FontWeight.w900,
                   ),),
                   SizedBox(height:50),
                 ]),

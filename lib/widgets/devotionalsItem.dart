@@ -19,7 +19,7 @@ class DevotionalItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Material(
+          const Material(
             elevation: 5.0,
             child: Image(
              image: AssetImage('assets/images/devotionalsmock.jpg'),
@@ -27,7 +27,7 @@ class DevotionalItem extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(left: 8.0.w, top: 8.0.h),
-            child: Text("The Memory Book", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+            child: const Text("The Memory Book", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
           ),
           Padding(
             padding: EdgeInsets.only(left: 8.0.w,),

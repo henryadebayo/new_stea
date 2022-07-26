@@ -1,29 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:stea/Services/testimony_services.dart';
+import 'package:provider/provider.dart';
 import 'package:stea/models/testimonyModel.dart';
 import 'package:stea/widgets/buton.dart';
 import 'package:stea/widgets/const.dart';
+import '../view_models/testimony_view_models.dart';
 
-class AddTestimony extends StatefulWidget {
-
-  @override
-  _AddTestimonyState createState() => _AddTestimonyState();
-
-}
-
-class _AddTestimonyState extends State<AddTestimony> {
-
+class AddTestimony extends StatelessWidget {
+  late  BuildContext _context;
+   AddTestimony({Key? key}) : super(key: key);
   late String name;
   late String details;
   final testimony = TestimonyModel();
   final formkey = GlobalKey<FormState>();
   final mainKey = GlobalKey<ScaffoldState>();
-  TestimonyService testimonyService = TestimonyService();
-
 
   @override
   Widget build(BuildContext context) {
+this._context = context;
+
+
+    TestimonyVeiwModel testimonyVeiwModel = context.watch<TestimonyVeiwModel>();
+
     return Scaffold(
       key: mainKey,
       appBar: AppBar(
@@ -60,15 +58,12 @@ class _AddTestimonyState extends State<AddTestimony> {
                             )
                         ),
                         maxLength: 25,
-                        onSaved: (String? value) {
-                          name = value!;
+                        validator: (value){
+                        value ?? "ncfcgfd";
                         },
-                        validator: (String? value) {
-                          if (value!.isEmpty) {
-                            return "please input your Testimony text";
-                          }
-                          return null;
-                        }
+                        onSaved: (String? value) {
+                          name = value?? "Anonymous";
+                        },
                     ),
 
                     SizedBox(height: MediaQuery
@@ -110,28 +105,31 @@ class _AddTestimonyState extends State<AddTestimony> {
                   .height / 50),
 
               RoundWhiteButton(
-                onTap: () {
-                 if (formkey.currentState!.validate()){
-                   formkey.currentState!.save();
-                  //testimonyVeiwModel.postTestimony(name,details);
-                  testimonyService.sendTes(name, details);
-                 }
-                 if(testimonyService.loading == false){
-                   Navigator.of(context).pop();
-                   const SnackBar(
-                     backgroundColor: KdarkBlueColour,
-                     content: Text("Testimony uploaded successfully"),
-                     duration: Duration(
-                         seconds: 2
-                     ),
-                   );
-                 }else{
-                   showLoadingIndicator(context);
-                 }
-                },
                 label: "Upload",
                 width: 500.0,
                 height: 60.0,
+                //onTap: onPressed(),
+                onTap: () {
+                  var form = formkey.currentState;
+                  if (form!.validate()) {
+                    print("THIS IS LOADING STATE 3::: ${testimonyVeiwModel.loadingg.toString()}");
+                    form.save();
+                    testimonyVeiwModel.sendTestimony(name, details);
+                    if(testimonyVeiwModel.loadingg){
+                      showLoadingIndicator(context);
+                    } else{
+                      Navigator.of(context).pop();
+                      const SnackBar(
+                        backgroundColor: KdarkBlueColour,
+                        content: Text("Testimony uploaded successfully"),
+                        duration: Duration(
+                            seconds: 2
+                        ),
+                      );
+                      print("THIS IS LOADING STATE 4::: ${testimonyVeiwModel.loadingg.toString()}");
+                    }
+                  }
+                },
               ),
             ],
           ),
@@ -139,22 +137,23 @@ class _AddTestimonyState extends State<AddTestimony> {
       ),
     );
   }
+
+  void showLoadingIndicator(BuildContext context) {
+    showDialog(context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            content: Row(
+              children: const [
+                SpinKitCubeGrid(
+                  color: Colors.blueAccent,
+                  size: 25.0,
+                ),
+                SizedBox(width: 16,),
+                Text("Uploading Testimony..."),
+              ],
+            ),
+          );
+        });
   }
-void showLoadingIndicator(BuildContext context) {
-  showDialog(context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          content: Row(
-            children: const [
-              SpinKitCubeGrid(
-                color: Colors.blueAccent,
-                size: 25.0,
-              ),
-              SizedBox(width: 16,),
-              Text("Uploading Testimony..."),
-            ],
-          ),
-        );
-      });
-}
+  }

@@ -1,6 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
-import 'package:stea/widgets/bottomNavigation.dart';
+import 'package:stea/screens/bottomNavigation.dart';
 import 'package:stea/widgets/const.dart';
 import 'package:stea/widgets/devotionalsItem.dart';
 import 'package:stea/widgets/searchField.dart';

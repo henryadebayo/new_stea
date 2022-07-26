@@ -7,6 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 final registerButtonColour =  Colors.blue[900];
 
 class MyWelcomePage extends StatefulWidget {
+  const MyWelcomePage({Key? key}) : super(key: key);
+
   @override
   _MyWelcomePageState createState() => _MyWelcomePageState();
 }
@@ -34,7 +36,7 @@ class _MyWelcomePageState extends State<MyWelcomePage> {
             Center(
               child: Container(
                 height: 250.0.h,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
 
                   image: DecorationImage(
                     image: KsteaLogo,

@@ -6,12 +6,12 @@ import 'package:stea/screens/testimonyPage.dart';
 import 'package:stea/widgets/buildAppbarLogo.dart';
 import 'package:stea/widgets/const.dart';
 import 'package:stea/widgets/quickAccessContent.dart';
-
 import 'AboutUs.dart';
+import '../widgets/appCloser.dart';
 
 class HomeScreen extends StatefulWidget {
   final String? userName;
-  HomeScreen({this.userName});
+  const HomeScreen({this.userName});
 
   @override
   _HomeScreenState createState() => _HomeScreenState(firstName: userName);
@@ -22,7 +22,6 @@ class _HomeScreenState extends State<HomeScreen> {
   final String? firstName;
   _HomeScreenState({this.firstName});
 
-  DateTime pre_backpress = DateTime.now();
 
   List<Widget> Images = [
     Image(image: AssetImage("assets/images/stea.jpg"), fit: BoxFit.cover, height: 120.0.h, width: 300.0.w,),
@@ -30,23 +29,11 @@ class _HomeScreenState extends State<HomeScreen> {
     Image(image: AssetImage("assets/images/stea3.jpg"), fit: BoxFit.cover , height: 120.0.h, width: 300.0.w,),
     Image(image: AssetImage("assets/images/stea4.jpg"), fit: BoxFit.cover , height: 120.0.h, width: 300.0.w,),
   ];
+
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async{
-        final timegap = DateTime.now().difference(pre_backpress);
-        final cantExit = timegap >= Duration(seconds: 2);
-        pre_backpress = DateTime.now();
-        if(cantExit){
-          //show snackbar
-          final snack = SnackBar(content: Text('Press Back button again to Exit'),duration: Duration(seconds: 2),);
-          ScaffoldMessenger.of(context).showSnackBar(snack);
-          return false;
-        }else{
-          return true;
-        }
-      },
-      child: Scaffold(
+    return
+      Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
           centerTitle: true,
@@ -94,9 +81,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 //scrollDirection: Axis.vertical,
                 padding: EdgeInsets.only(left: 10.0.w, right: 10.0.w),
                 children: [
-                  //  ...List.generate(carouselItems.length, (index) => null)
-                  //
-                  // carouselItems.map((e) => CarouselSlider(items:[e],)).toList(),
                   CarouselSlider(
                      items:Images,
                     options: CarouselOptions(
@@ -189,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         //bottomNavigationBar: BottomNavigation(),
-      ),
     );
   }
-}
+  }
+
