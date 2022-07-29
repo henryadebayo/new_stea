@@ -1,3 +1,100 @@
+import 'dart:convert';
+import 'dart:ffi';
+import 'dart:math';
+import 'dart:typed_data';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter/material.dart';
+
+
+final mainReference = FirebaseDatabase.instance.reference();
+final devotionalDataBase = mainReference.child("DevotionalDataBase");
+
+
+Future getPdf()async{
+
+  //Generate Random name for pdf file
+  var rnd = new Random();
+  String randomName = "";
+  for (var i = 0; i< 20; i++ ){
+    randomName+= rnd.nextInt(100).toString();
+  }
+
+  //Pick file from phone storage
+  FilePickerResult? file = await FilePicker.platform.pickFiles();
+  Uint8List? fileBytes = file?.files.first.bytes;
+
+
+  //create randomName for pdf
+  String fileName = "${randomName}.pdf";
+
+  // add file name and upload file
+ savePdf(fileBytes, fileName);
+
+}
+
+savePdf(dynamic asset, String name)async {
+  final storageRef = FirebaseStorage.instance.ref();
+  final ref = storageRef.child(name);
+  final uploadTask =  ref.putData(asset);
+
+
+  // Get pdf download/view url
+  String? url;
+  uploadTask.whenComplete(() {
+    url = ref.getDownloadURL() as String;
+  }).catchError((onError) {
+    print(onError);
+  });
+
+//  return url;
+  // String url = await (await upload.whenComplete(() => null)).ref.getDownloadURL();
+
+  //return pdf download url
+  documentFileUpload(url!);
+}
+
+
+
+
+
+//creates Random string as Id to store individual devotionals and it properties
+ String CreateRandomCryptoString([int length = 32]){
+  final Random _random = Random.secure();
+
+  var value = List<int>.generate(length, (i) => _random.nextInt(256));
+
+  return base64.encode(value);
+
+}
+
+
+//store pdf download url and properties
+void documentFileUpload(String str){
+  var data = {
+    "pdf": str,
+    "name": "Random Book"
+
+
+  };
+
+  devotionalDataBase.child(CreateRandomCryptoString()).set(data).then((value) => null);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import 'dart:convert';
 // import 'dart:io';
 // import 'dart:math';
@@ -35,27 +132,27 @@
 //     setFile(await filePicker.pickFiles(type: FileType.custom) as File);
 //   }
 //
-//   // Future uploadPdf(DevotionalModel devotional) async {
-//   //
-//   //   Reference ref = FirebaseStorage.instance.ref().child("devotional").child(
-//   //       "/${devotional.devotionalName}.pdf");
-//   //   UploadTask uploadTask = ref.putData(
-//   //       _file.readAsBytesSync(), SettableMetadata(
-//   //       contentType: "pdf",
-//   //       customMetadata: {
-//   //         "devotionalName": devotional.devotionalName,
-//   //         "devotionalPath": devotional.devotionalPath,
-//   //         "devotionalDescription": devotional.devotionalDescription,
-//   //         "devotionalId": devotional.id,
-//   //       }
-//   //   ));
-//   // }
-//   //
-//   // Future<List<Map<String, dynamic>>> loadDevotional()async{
-//   //   FirebaseStorage.instance;
-//   //   List<Map<String, dynamic>> devos = [];
-//   //   final ListResult result = await storage.ref().list();
-//   // }
+//   Future uploadPdf(DevotionalModel devotional) async {
+//
+//     Reference ref = FirebaseStorage.instance.ref().child("devotional").child(
+//         "/${devotional.devotionalName}.pdf");
+//     UploadTask uploadTask = ref.putData(
+//         _file.readAsBytesSync(), SettableMetadata(
+//         contentType: "pdf",
+//         customMetadata: {
+//           "devotionalName": devotional.devotionalName,
+//           "devotionalPath": devotional.devotionalPath,
+//           "devotionalDescription": devotional.devotionalDescription,
+//           "devotionalId": devotional.id,
+//         }
+//     ));
+//   }
+//
+//   Future<List<Map<String, dynamic>>> loadDevotional()async{
+//     FirebaseStorage.instance;
+//     List<Map<String, dynamic>> devos = [];
+//     final ListResult result = await storage.ref().list();
+//   }
 //
 //
 //
@@ -66,10 +163,10 @@
 //   savePdf(_file!.readAsBytesSync(), fileName);
 // }
 //
-//   void savePdf(List<int> asset, name)async {
+//   void savePdf(asset, name)async {
 //     setLoading(true);
 //   Reference ref = FirebaseStorage.instance.ref().child("devotional").child("/$name.pdf");
-//  //UploadTask upload = ref.putData(asset.toList());
+//  UploadTask upload = ref.putData(asset);
 //  String? url;
 //   upload.whenComplete(() {
 //     url = ref.getDownloadURL() as String;
@@ -97,12 +194,11 @@
 // };
 // databaseReference.child(CreateCryptoRandomString()).set(devotional).then((value) => print("success"));
 // }
-// //   // static Future<File> loadDevotional(String url)async {
-// //   //   final refPDF = FirebaseStorage.instance.ref().child(url);
-// //   //   final byte = await refPDF.getData();
-// //   //  // return _storeFile(url, byte);
-// //   // }
-// //   //
-// //
-// // }
+//   // static Future<File> loadDevotional(String url)async {
+//   //   final refPDF = FirebaseStorage.instance.ref().child(url);
+//   //   final byte = await refPDF.getData();
+//   //  return _storeFile(url, byte);
+//   // }
+//
+//
 // }

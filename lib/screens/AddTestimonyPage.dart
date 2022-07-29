@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'package:stea/models/testimonyModel.dart';
-import 'package:stea/widgets/buton.dart';
 import 'package:stea/widgets/const.dart';
 import '../view_models/testimony_view_models.dart';
 
@@ -15,10 +14,10 @@ class AddTestimony extends StatelessWidget {
   final formkey = GlobalKey<FormState>();
   final mainKey = GlobalKey<ScaffoldState>();
 
+
   @override
   Widget build(BuildContext context) {
 this._context = context;
-
 
     TestimonyVeiwModel testimonyVeiwModel = context.watch<TestimonyVeiwModel>();
 
@@ -103,12 +102,7 @@ this._context = context;
                   .of(context)
                   .size
                   .height / 50),
-
-              RoundWhiteButton(
-                label: "Upload",
-                width: 500.0,
-                height: 60.0,
-                //onTap: onPressed(),
+              InkWell(
                 onTap: () {
                   var form = formkey.currentState;
                   if (form!.validate()) {
@@ -130,7 +124,43 @@ this._context = context;
                     }
                   }
                 },
+                child: Container(
+                    width: 500.0,
+                    height: 60.0,
+                  color: KdarkBlueColour,
+                  child: Center(
+                    child: Text("Summit"),
+                  ),
+                ),
               ),
+
+              // RoundWhiteButton(
+              //   label: "Upload",
+              //   width: 500.0,
+              //   height: 60.0,
+              //   //onTap: onPressed(),
+              //   onTap: () {
+              //     var form = formkey.currentState;
+              //     if (form!.validate()) {
+              //       print("THIS IS LOADING STATE 3::: ${testimonyVeiwModel.loadingg.toString()}");
+              //       form.save();
+              //       testimonyVeiwModel.sendTestimony(name, details);
+              //       if(testimonyVeiwModel.loadingg){
+              //         showLoadingIndicator(context);
+              //       } else{
+              //         Navigator.of(context).pop();
+              //         const SnackBar(
+              //           backgroundColor: KdarkBlueColour,
+              //           content: Text("Testimony uploaded successfully"),
+              //           duration: Duration(
+              //               seconds: 2
+              //           ),
+              //         );
+              //         print("THIS IS LOADING STATE 4::: ${testimonyVeiwModel.loadingg.toString()}");
+              //       }
+              //     }
+              //   },
+              // ),
             ],
           ),
         ),

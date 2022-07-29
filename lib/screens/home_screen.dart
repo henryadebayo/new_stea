@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   quickAccessIcon(),
                   SizedBox(height: 30.0.h),
-                  Expanded(
+                  Container(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [

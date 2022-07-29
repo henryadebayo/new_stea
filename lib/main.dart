@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 
     return MultiProvider(providers: [
       ChangeNotifierProvider(create: (_)=>
-          TestimonyVeiwModel()
+          TestimonyVeiwModel(),
       ),
     ],
       child:  ScreenUtilInit(
