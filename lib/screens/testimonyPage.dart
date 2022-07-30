@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:stea/Services/testimony_services.dart';
 import 'package:stea/widgets/const.dart';
 import 'package:stea/widgets/testimonyItem.dart';
+import '../data/Services/testimony_services.dart';
 import '../view_models/testimony_view_models.dart';
 import 'AddTestimonyPage.dart';
 

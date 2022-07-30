@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:stea/Services/api_status.dart';
-import 'package:stea/Services/testimony_services.dart';
-import 'package:stea/models/testimonyModel.dart';
+
+import '../data/Services/api_status.dart';
+import '../data/Services/testimony_services.dart';
+import '../data/models/testimonyModel.dart';
+
 
 class TestimonyVeiwModel extends ChangeNotifier{
   late TestimonyService testimonyService ;

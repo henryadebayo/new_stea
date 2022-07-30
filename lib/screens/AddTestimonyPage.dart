@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:stea/models/testimonyModel.dart';
 import 'package:stea/widgets/const.dart';
+import '../data/models/testimonyModel.dart';
 import '../view_models/testimony_view_models.dart';
 
 class AddTestimony extends StatelessWidget {

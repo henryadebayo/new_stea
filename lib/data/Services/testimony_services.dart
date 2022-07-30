@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:flutter/material.dart';
-import 'package:stea/Services/api_status.dart';
-import 'package:stea/models/testimonyModel.dart';
 import 'package:stea/utils/constants.dart';
 import 'package:http/http.dart'as http;
+
+import '../models/testimonyModel.dart';
+import 'api_status.dart';
 
 
 class TestimonyService {

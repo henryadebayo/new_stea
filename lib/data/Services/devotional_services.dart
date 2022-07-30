@@ -13,7 +13,7 @@ final devotionalDataBase = mainReference.child("DevotionalDataBase");
 Future getPdf()async{
 
   //Generate Random name for pdf file
-  var rnd = new Random();
+  var rnd = Random();
   String randomName = "";
   for (var i = 0; i< 20; i++ ){
     randomName+= rnd.nextInt(100).toString();
@@ -200,3 +200,7 @@ void documentFileUpload(String str){
 //
 //
 // }
+
+
+//API Key
+//AIzaSyDvXu1laeo29tsd3wCl7rVGc0DXHPdkUSU
