@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:stea/widgets/const.dart';
 
+import '../utils/app_colors/appColors.dart';
 
 class NotificationScreen extends StatefulWidget {
   @override
   _NotificationScreenState createState() => _NotificationScreenState();
 }
- String? title;
+
+String? title;
 
 class _NotificationScreenState extends State<NotificationScreen> {
   @override
@@ -15,15 +16,18 @@ class _NotificationScreenState extends State<NotificationScreen> {
       appBar: AppBar(
         //backgroundColor: Color(0xFF0E3498),
         centerTitle: true,
-        backgroundColor: KdarkBlueColour,
-        title: Title(color: lightBlueColour!, child: Text("Notification",
-                style: TextStyle(fontFamily: " GoogleSans",),),
+        backgroundColor: AppColors.darkBlueColour,
+        title: Title(
+          color: AppColors.lightBlueColour!,
+          child: Text(
+            "Notification",
+            style: TextStyle(
+              fontFamily: " GoogleSans",
+            ),
+          ),
         ),
       ),
-
-      body: Column(
-        
-      ),
+      body: Column(),
     );
   }
 }

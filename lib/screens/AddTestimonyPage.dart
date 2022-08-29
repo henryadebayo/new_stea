@@ -2,35 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'package:stea/widgets/const.dart';
+
 import '../data/models/testimonyModel.dart';
+import '../utils/app_colors/appColors.dart';
 import '../view_models/testimony_view_models.dart';
 
 class AddTestimony extends StatelessWidget {
-  late  BuildContext _context;
-   AddTestimony({Key? key}) : super(key: key);
+  AddTestimony({Key? key}) : super(key: key);
   late String name;
   late String details;
   final testimony = TestimonyModel();
   final formkey = GlobalKey<FormState>();
   final mainKey = GlobalKey<ScaffoldState>();
 
-
   @override
   Widget build(BuildContext context) {
-this._context = context;
-
-    TestimonyVeiwModel testimonyVeiwModel = context.watch<TestimonyVeiwModel>();
+    TestimonyViewModel testimonyVeiwModel = context.watch<TestimonyViewModel>();
 
     return Scaffold(
       key: mainKey,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        backgroundColor: KdarkBlueColour,
+        backgroundColor: AppColors.darkBlueColour,
         title: const Text(
           "Upload Testimony",
-          style: TextStyle(fontFamily: KfontFamily,
-              letterSpacing: 1.0,
+          style: TextStyle(
+            fontFamily: KfontFamily,
+            letterSpacing: 1.0,
           ),
         ),
       ),
@@ -39,128 +38,88 @@ this._context = context;
           padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
           child: Column(
             children: [
-              SizedBox(height: MediaQuery
-                  .of(context)
-                  .size
-                  .height / 12),
-
+              SizedBox(height: MediaQuery.of(context).size.height / 12),
               Form(
                   key: formkey,
-                  child:
-                  Column(children: [
-                    TextFormField(
+                  child: Column(
+                    children: [
+                      TextFormField(
                         decoration: InputDecoration(
                             labelText: "name",
                             focusColor: Colors.red,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20.0),
-                            )
-                        ),
+                            )),
                         maxLength: 25,
-                        validator: (value){
-                        value ?? "ncfcgfd";
+                        validator: (value) {
+                          value ?? "ncfcgfd";
                         },
                         onSaved: (String? value) {
-                          name = value?? "Anonymous";
+                          name = value ?? "Anonymous";
                         },
-                    ),
+                      ),
+                      SizedBox(height: MediaQuery.of(context).size.height / 30),
+                      TextFormField(
+                          //expands: true,
 
-                    SizedBox(height: MediaQuery
-                        .of(context)
-                        .size
-                        .height / 30),
-
-                    TextFormField(
-                      //expands: true,
-
-                        decoration: InputDecoration(
-                            labelText: "Testimony",
-                            // hintStyle: TextStyle(),
-                            focusColor: Colors.red,
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20.0),
-
-                            )
-                        ),
-                        maxLines: 10,
-                        maxLength: 2000,
-                        onSaved: (String? value) {
-                         details = value!;
-                        },
-                        validator: (String? value) {
-                          if (value!.isEmpty) {
-                            return "please input your Testimony text";
-                          }
-                          return null;
-                        }
-                    ),
-                  ],)
-
-              ),
-
-              SizedBox(height: MediaQuery
-                  .of(context)
-                  .size
-                  .height / 50),
+                          decoration: InputDecoration(
+                              labelText: "Testimony",
+                              // hintStyle: TextStyle(),
+                              focusColor: Colors.red,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              )),
+                          maxLines: 10,
+                          maxLength: 2000,
+                          onSaved: (String? value) {
+                            details = value!;
+                          },
+                          validator: (String? value) {
+                            if (value!.isEmpty) {
+                              return "please input your Testimony text";
+                            }
+                            return null;
+                          }),
+                    ],
+                  )),
+              SizedBox(height: MediaQuery.of(context).size.height / 50),
               InkWell(
-                onTap: () {
+                onTap: () async {
                   var form = formkey.currentState;
                   if (form!.validate()) {
-                    print("THIS IS LOADING STATE 3::: ${testimonyVeiwModel.loadingg.toString()}");
+                    print(
+                        "THIS IS LOADING STATE 3::: ${testimonyVeiwModel.loading.toString()}");
                     form.save();
-                    testimonyVeiwModel.sendTestimony(name, details);
-                    if(testimonyVeiwModel.loadingg){
+
+                    // await testimonyVeiwModel.sendTestimony(name, details);
+                    // if (testimonyVeiwModel.loading) {
+                    //   showLoadingIndicator(context);
+                    // } else {
+                    //   Navigator.of(context).pop();
+                    await testimonyVeiwModel.getTest();
+                    if (testimonyVeiwModel.loadingg == true) {
                       showLoadingIndicator(context);
-                    } else{
+                    } else {
                       Navigator.of(context).pop();
-                      const SnackBar(
-                        backgroundColor: KdarkBlueColour,
+                      SnackBar(
+                        backgroundColor: AppColors.darkBlueColour,
                         content: Text("Testimony uploaded successfully"),
-                        duration: Duration(
-                            seconds: 2
-                        ),
+                        duration: Duration(seconds: 2),
                       );
-                      print("THIS IS LOADING STATE 4::: ${testimonyVeiwModel.loadingg.toString()}");
+                      print(
+                          "THIS IS LOADING STATE 4::: ${testimonyVeiwModel.loading.toString()}");
                     }
                   }
                 },
                 child: Container(
-                    width: 500.0,
-                    height: 60.0,
-                  color: KdarkBlueColour,
+                  width: 500.0,
+                  height: 60.0,
+                  color: AppColors.darkBlueColour,
                   child: Center(
                     child: Text("Summit"),
                   ),
                 ),
               ),
-
-              // RoundWhiteButton(
-              //   label: "Upload",
-              //   width: 500.0,
-              //   height: 60.0,
-              //   //onTap: onPressed(),
-              //   onTap: () {
-              //     var form = formkey.currentState;
-              //     if (form!.validate()) {
-              //       print("THIS IS LOADING STATE 3::: ${testimonyVeiwModel.loadingg.toString()}");
-              //       form.save();
-              //       testimonyVeiwModel.sendTestimony(name, details);
-              //       if(testimonyVeiwModel.loadingg){
-              //         showLoadingIndicator(context);
-              //       } else{
-              //         Navigator.of(context).pop();
-              //         const SnackBar(
-              //           backgroundColor: KdarkBlueColour,
-              //           content: Text("Testimony uploaded successfully"),
-              //           duration: Duration(
-              //               seconds: 2
-              //           ),
-              //         );
-              //         print("THIS IS LOADING STATE 4::: ${testimonyVeiwModel.loadingg.toString()}");
-              //       }
-              //     }
-              //   },
-              // ),
             ],
           ),
         ),
@@ -168,8 +127,9 @@ this._context = context;
     );
   }
 
-  void showLoadingIndicator(BuildContext context) {
-    showDialog(context: context,
+  showLoadingIndicator(BuildContext context) {
+    showDialog(
+        context: context,
         barrierDismissible: false,
         builder: (BuildContext context) {
           return AlertDialog(
@@ -179,11 +139,13 @@ this._context = context;
                   color: Colors.blueAccent,
                   size: 25.0,
                 ),
-                SizedBox(width: 16,),
+                SizedBox(
+                  width: 16,
+                ),
                 Text("Uploading Testimony..."),
               ],
             ),
           );
         });
   }
-  }
+}

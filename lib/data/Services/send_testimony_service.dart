@@ -15,7 +15,7 @@ class SendTestimonyService{
         "name": name,
         "details":details,
       };
-      http.Response response = await http.post(Uri.parse(TESTIMONY_URL),
+      http.Response response = await http.post(Uri.parse(Konstants.TESTIMONY_URL),
           body: json.encode(tdata));
       print(response.statusCode);
       print(response.body);

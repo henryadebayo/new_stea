@@ -5,26 +5,29 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:stea/screens/steaLogoAnimation.dart';
 import 'package:stea/view_models/testimony_view_models.dart';
+import 'package:stea/view_models/youTube_view_model.dart';
 import 'package:stea/widgets/const.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(
-      MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-    return MultiProvider(providers: [
-      ChangeNotifierProvider(create: (_)=>
-          TestimonyVeiwModel(),
-      ),
-    ],
-      child:  ScreenUtilInit(
-        builder:(child, context) => MaterialApp(
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => TestimonyViewModel(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => YouTubeViewModel(),
+        ),
+      ],
+      child: ScreenUtilInit(
+        builder: (child, context) => MaterialApp(
           title: 'Stea app',
           theme: ThemeData(
             fontFamily: KfontFamily,
@@ -34,10 +37,8 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           home: const SteaAnimation(),
         ),
-        designSize: const Size (360, 640),
-
+        designSize: const Size(360, 640),
       ),
     );
-
   }
 }

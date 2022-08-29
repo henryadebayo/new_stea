@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:stea/screens/bottomNavigation.dart';
 import 'package:stea/widgets/sigIn_widget.dart';
+
+import '../view_models/youTube_view_model.dart';
 import 'alreadyMember.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -10,12 +13,14 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-   String? _firstname;
+  String? _firstname;
   final formKey = GlobalKey<FormState>();
   final mainKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
+    YouTubeViewModel testYt = context.watch<YouTubeViewModel>();
+    YouTubeViewModel yt = context.watch<YouTubeViewModel>();
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -61,7 +66,22 @@ class _RegisterPageState extends State<RegisterPage> {
                 InkWell(
                     onTap: onPressed,
                     onDoubleTap: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx){
+                      //yt.getVideos();
+                      // YTVideoModel hg = videoModelFromJson(
+                      //     YoutubeServices.getYouTubeVideos(
+                      //         "PLbd9-9nbCzE4GwQX6UL5MZcK571APZ5Yf", ""));
+                      // print(data.toString());
+
+                      // testYt.getVideos();
+                      // if (testYt.loading) {
+                      //   print("loading..");
+                      // } else {
+                      //   print("done");
+                      //   print(testYt.yTVideos.toString());
+                      // }
+
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (ctx) {
                         return const BottomNavigationWidget();
                       }));
                     },
@@ -126,6 +146,7 @@ class _RegisterPageState extends State<RegisterPage> {
     if (form!.validate()) {
       form.save();
       //var _firstname;
+
       Navigator.of(context).push(MaterialPageRoute(
           builder: (BuildContext context) =>
               BottomNavigationWidget(userName: _firstname)));

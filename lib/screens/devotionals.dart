@@ -1,9 +1,7 @@
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
-import 'package:stea/screens/bottomNavigation.dart';
-import 'package:stea/widgets/const.dart';
 import 'package:stea/widgets/devotionalsItem.dart';
-import 'package:stea/widgets/searchField.dart';
+
+import '../utils/app_colors/appColors.dart';
 
 class Devotionals extends StatefulWidget {
   const Devotionals({Key? key}) : super(key: key);
@@ -18,32 +16,38 @@ class _DevotionalsState extends State<Devotionals> {
     return Scaffold(
       //bottomNavigationBar: BottomNavigation(),
       appBar: AppBar(
-        title: Text("Devotionals",style: TextStyle(fontFamily: " GoogleSans",),),
+        title: Text(
+          "Devotionals",
+          style: TextStyle(
+            fontFamily: " GoogleSans",
+          ),
+        ),
         centerTitle: true,
-        backgroundColor: KdarkBlueColour,
+        backgroundColor: AppColors.darkBlueColour,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 8.0, right: 10.0, top: 20.0, bottom: 20.0),
+        padding: const EdgeInsets.only(
+            left: 8.0, right: 10.0, top: 20.0, bottom: 20.0),
         child:
-           // SearchField(searchTxt: "search for Devotional",),
+            // SearchField(searchTxt: "search for Devotional",),
             //SizedBox(height:20.0.h),
-           // DevotionalItem(),
-         GridView.count(
-           crossAxisCount: 2,
-           primary: false,
-           crossAxisSpacing: 10,
-           mainAxisSpacing: 10,
-           children: <Widget>[
-             DevotionalItem(),
-             DevotionalItem(),
-             DevotionalItem(),
-             DevotionalItem(),
-             DevotionalItem(),
-             DevotionalItem(),
-             DevotionalItem(),
-             DevotionalItem(),
-           ],
-         ),
+            // DevotionalItem(),
+            GridView.count(
+          crossAxisCount: 2,
+          primary: false,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          children: <Widget>[
+            DevotionalItem(),
+            DevotionalItem(),
+            DevotionalItem(),
+            DevotionalItem(),
+            DevotionalItem(),
+            DevotionalItem(),
+            DevotionalItem(),
+            DevotionalItem(),
+          ],
+        ),
       ),
     );
   }
