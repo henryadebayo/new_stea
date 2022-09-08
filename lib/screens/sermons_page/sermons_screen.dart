@@ -5,6 +5,8 @@ import 'package:stea/screens/sermons_page/widgets/search_field.dart';
 import 'package:stea/screens/sermons_page/widgets/videoWidget.dart';
 
 import '../../utils/app_colors/appColors.dart';
+import '../../widgets/curved_custom_tabBar.dart';
+import '../../widgets/edge_padding.dart';
 
 class SermonsScreen extends StatefulWidget {
   const SermonsScreen({Key? key}) : super(key: key);
@@ -27,8 +29,7 @@ class _SermonsScreenState extends State<SermonsScreen> {
             style: TextStyle(color: AppColors.darkBlueColour),
           ),
         ),
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 16.0.h),
+        body: EdgePadding(
           child: Column(
             children: [
               const Center(
@@ -49,20 +50,9 @@ class _SermonsScreenState extends State<SermonsScreen> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30.0.r),
                     color: Colors.grey[200]),
-                child: TabBar(
-                  labelColor: Colors.black,
-                  labelStyle: const TextStyle(fontWeight: FontWeight.w500),
-                  indicator: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0.r),
-                      color: Colors.white),
-                  tabs: const [
-                    Tab(
-                      text: "Video sermons",
-                    ),
-                    Tab(
-                      text: "Audio Board",
-                    ),
-                  ],
+                child: CustomCurvedTabBar(
+                  firstLabel: "Video sermons",
+                  secondLabel: "Audio Board",
                 ),
               ),
               SizedBox(

@@ -5,10 +5,10 @@ import 'package:stea/widgets/const.dart';
 import '../screens/devotionals.dart';
 import '../screens/testimony_page/TestimonyScreen.dart';
 
-class quickAccessContent extends StatelessWidget {
+class QuickAccessContent extends StatelessWidget {
   final String? labelText;
   var onTapFunction;
-  quickAccessContent({this.labelText, this.onTapFunction});
+  QuickAccessContent({this.labelText, this.onTapFunction});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,8 +21,8 @@ class quickAccessContent extends StatelessWidget {
           child: Center(
             child: Text(
               labelText!,
-              style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              style: const TextStyle(
+                  fontWeight: FontWeight.bold, color: Colors.white),
             ),
           ),
           decoration: BoxDecoration(
@@ -48,40 +48,40 @@ class QuickAccessIcon extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          quickAccessContent(
+          QuickAccessContent(
             onTapFunction: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => Devotionals()));
+                  builder: (BuildContext context) => const Devotionals()));
             },
             labelText: "Devotionals",
           ),
-          quickAccessContent(
+          QuickAccessContent(
             onTapFunction: () {
               _bottomSheet(context);
             },
             labelText: "Donations",
           ),
-          quickAccessContent(
+          QuickAccessContent(
             onTapFunction: () {
               _bottomSheet(context);
             },
             labelText: "Offering",
           ),
-          quickAccessContent(
+          QuickAccessContent(
             onTapFunction: () {
               _bottomSheet(context);
             },
             labelText: "Tithe",
           ),
-          quickAccessContent(
+          QuickAccessContent(
             onTapFunction: () {
               // color: Colors.white,
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => TestimonyScreen()));
+                  builder: (BuildContext context) => const TestimonyScreen()));
             },
             labelText: "Testimonies",
           ),
-          quickAccessContent(
+          QuickAccessContent(
             labelText: "Branches",
           ),
         ],
@@ -109,7 +109,7 @@ _bottomSheet(context) {
                 padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                 child: Column(children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.only(top: 15.0, bottom: 20.0),
+                    padding: const EdgeInsets.only(top: 15.0, bottom: 20.0),
                     child: Container(
                       height: 5.0,
                       width: 70.0,
@@ -119,14 +119,14 @@ _bottomSheet(context) {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(15.0),
                     child: Text("Donations",
                         style: TextStyle(
                             color: AppColors.darkBlueColour,
                             fontSize: 30.0,
                             fontWeight: FontWeight.w500)),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5.0,
                   ),
                   Text(
@@ -137,7 +137,7 @@ _bottomSheet(context) {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  SizedBox(height: 40.0),
+                  const SizedBox(height: 40.0),
                   Text(
                     KchurchAcc,
                     style: TextStyle(

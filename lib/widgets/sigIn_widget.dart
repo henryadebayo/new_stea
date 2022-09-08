@@ -7,18 +7,17 @@ String? emailAddress;
 String? phoneNumber;
 String? address;
 
-Widget buidFIrstNameFormFeild({required String? name}) {
+Widget buildFirstNameFormField({required String? name}) {
   return TextFormField(
     decoration: InputDecoration(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0.r),
-        borderSide: BorderSide(
-          color: Color(0xFF0E3E3E3),
+        borderSide: const BorderSide(
+          color: Color(0xff0e3e3e3),
         ),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4.0.r),
-        //borderSide: BorderSide(color: Colors.black),
       ),
       contentPadding: EdgeInsets.symmetric(
         horizontal: 19.w,
@@ -39,12 +38,12 @@ Widget buidFIrstNameFormFeild({required String? name}) {
   );
 }
 
-Widget buidLastNameFormFeild() {
+Widget buildLastNameFormField() {
   return TextFormField(
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.0.r),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Color(0xFF0E3E3E3),
           ),
         ),
@@ -72,43 +71,40 @@ Widget buidLastNameFormFeild() {
       });
 }
 
-Widget buidEmailAddressFormFeild() {
+Widget buildEmailAddressFormField() {
   return TextFormField(
-    decoration: InputDecoration(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8.0.r),
-        borderSide: BorderSide(
-          color: Color(0xFF0E3E3E3),
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.0.r),
+          borderSide: const BorderSide(
+            color: Color(0xFF0E3E3E3),
+          ),
         ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4.0.r),
+        ),
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: 19.w,
+          vertical: 15.h,
+        ),
+        hintText: "email address",
+        hintStyle: TextStyle(fontSize: 14.sp),
       ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4.0.r),
-      ),
-      contentPadding: EdgeInsets.symmetric(
-        horizontal: 19.w,
-        vertical: 15.h,
-      ),
-      hintText: "email address",
-      hintStyle: TextStyle(fontSize: 14.sp),
-    ),
-    onSaved: (String? email) {
-      email = emailAddress;
-    },
-    validator: (String? email) {
-      String errorMessage;
-      if (!email!.contains("@") && email.isEmpty) {
-        errorMessage = "email address is incorrect";
-        return errorMessage;
-      }
-    }
-  );
+      onSaved: (String? email) {
+        email = emailAddress;
+      },
+      validator: (String? email) {
+        String errorMessage;
+        if (!email!.contains("@") && email.isEmpty) {
+          errorMessage = "email address is incorrect";
+          return errorMessage;
+        }
+      });
 }
 
-Widget buidPhoneNumberFormFeild() {
+Widget buildPhoneNumberFormField() {
   return TextFormField(
-      inputFormatters: [
-        LengthLimitingTextInputFormatter(13)
-      ],
+      inputFormatters: [LengthLimitingTextInputFormatter(13)],
       keyboardType: TextInputType.phone,
       decoration: InputDecoration(
         border: OutlineInputBorder(
@@ -138,12 +134,12 @@ Widget buidPhoneNumberFormFeild() {
       });
 }
 
-Widget buidAddressFormFeild() {
+Widget buildAddressFormField() {
   return TextFormField(
     decoration: InputDecoration(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0.r),
-        borderSide: BorderSide(
+        borderSide: const BorderSide(
           color: Color(0xFF0E3E3E3),
         ),
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:stea/screens/bottomNavigation.dart';
+import 'package:stea/screens/bottom_navigation/bottomNavigation.dart';
 import 'package:stea/widgets/sigIn_widget.dart';
 
 import '../view_models/youTube_view_model.dart';
@@ -41,23 +41,23 @@ class _RegisterPageState extends State<RegisterPage> {
                 Form(
                   key: formKey,
                   child: Column(children: <Widget>[
-                    buidFIrstNameFormFeild(name: _firstname),
+                    buildFirstNameFormField(name: _firstname),
                     SizedBox(
                       height: 20.h,
                     ),
-                    buidLastNameFormFeild(),
+                    buildLastNameFormField(),
                     SizedBox(
                       height: 20.h,
                     ),
-                    buidEmailAddressFormFeild(),
+                    buildEmailAddressFormField(),
                     SizedBox(
                       height: 20.h,
                     ),
-                    buidPhoneNumberFormFeild(),
+                    buildPhoneNumberFormField(),
                     SizedBox(
                       height: 20.h,
                     ),
-                    buidAddressFormFeild(),
+                    buildAddressFormField(),
                   ]),
                 ),
                 SizedBox(

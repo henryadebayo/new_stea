@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:stea/screens/sermons_page/sermons_screen.dart';
 import 'package:stea/widgets/appCloser.dart';
 
-import '../utils/app_colors/appColors.dart';
-import 'devotionals.dart';
-import 'home_page/home_screen.dart';
+import '../../utils/app_colors/appColors.dart';
+import '../devotional_page/devotional_screen.dart';
+import '../home_page/home_screen.dart';
 
 class BottomNavigationWidget extends StatefulWidget {
   final String? userName;
@@ -20,7 +20,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
 
   List<Widget> pages = [
     const HomeScreen(),
-    const Devotionals(),
+    const DevotionalScreen(),
     const SermonsScreen(),
   ];
 
