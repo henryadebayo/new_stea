@@ -2,10 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stea/screens/home_page/widgets/quickAccessContent.dart';
 import 'package:stea/utils/app_textStyles/appTextStyle.dart';
 import 'package:stea/widgets/buildAppbarLogo.dart';
 import 'package:stea/widgets/const.dart';
-import 'package:stea/widgets/quickAccessContent.dart';
 
 import '../../utils/app_colors/appColors.dart';
 import '../prayers_page/prayer_screen.dart';

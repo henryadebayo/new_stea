@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:stea/screens/devotional_page/devotional_screen.dart';
 import 'package:stea/utils/app_colors/appColors.dart';
 import 'package:stea/widgets/const.dart';
 
-import '../screens/devotionals.dart';
-import '../screens/testimony_page/TestimonyScreen.dart';
+import '../../testimony_page/TestimonyScreen.dart';
 
 class QuickAccessContent extends StatelessWidget {
   final String? labelText;
@@ -51,7 +51,7 @@ class QuickAccessIcon extends StatelessWidget {
           QuickAccessContent(
             onTapFunction: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const Devotionals()));
+                  builder: (BuildContext context) => const DevotionalScreen()));
             },
             labelText: "Devotionals",
           ),
