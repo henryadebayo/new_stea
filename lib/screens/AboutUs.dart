@@ -79,11 +79,11 @@ class AboutUs extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 15.0.h),
-              aboutUsNameH(
+              AboutUsNameH(
                 labelName: "Bishop Ralph Olufemi Olowo",
               ),
               SizedBox(height: 5.0.h),
-              aboutUsImageContainer(
+              AboutUsImageContainer(
                 imageName: "assets/images/DAD5.jpg",
               ),
               AboutUsInfo(),
@@ -99,11 +99,11 @@ class AboutUs extends StatelessWidget {
               SizedBox(
                 height: 50.0.h,
               ),
-              aboutUsNameH(
+              AboutUsNameH(
                 labelName: "Rev.Lois Ibilola Olowo",
               ),
               SizedBox(height: 5.0.h),
-              aboutUsImageContainer(imageName: "images/mum2.jpg"),
+              AboutUsImageContainer(imageName: "images/mum2.jpg"),
               AboutUsInfo(),
               SizedBox(
                 height: 50.0.h,
@@ -117,11 +117,11 @@ class AboutUs extends StatelessWidget {
               SizedBox(
                 height: 50.0.h,
               ),
-              aboutUsNameH(
+              AboutUsNameH(
                 labelName: "Bishop David Bakare",
               ),
               SizedBox(height: 5.0.h),
-              aboutUsImageContainer(imageName: "assets/images/bb.jpg"),
+              AboutUsImageContainer(imageName: "assets/images/bb.jpg"),
               AboutUsInfo(),
               SizedBox(
                 height: 50.0.h,

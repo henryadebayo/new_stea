@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           home: const SteaAnimation(),
+          //home: const AudioSermonPlayer(),
         ),
         designSize: const Size(360, 640),
       ),

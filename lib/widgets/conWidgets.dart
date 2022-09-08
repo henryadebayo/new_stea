@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../utils/app_colors/appColors.dart';
 
-class aboutUsImageContainer extends StatelessWidget {
+class AboutUsImageContainer extends StatelessWidget {
   String imageName;
-  aboutUsImageContainer({
+  AboutUsImageContainer({
+    Key? key,
     required this.imageName,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +24,14 @@ class aboutUsImageContainer extends StatelessWidget {
   }
 }
 
-class aboutUsNameH extends StatelessWidget {
+class AboutUsNameH extends StatelessWidget {
   String labelName;
-  aboutUsNameH({required this.labelName});
+  AboutUsNameH({Key? key, required this.labelName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 7.0, right: 7.0),
+      padding: const EdgeInsets.only(left: 7.0, right: 7.0),
       child: Container(
         height: 40.0,
         width: double.infinity,
@@ -71,10 +72,10 @@ class AboutUsInfo extends StatelessWidget {
   }
 }
 
-class carouselItems extends StatelessWidget {
+class CarouselItems extends StatelessWidget {
   final image;
 
-  carouselItems({@required this.image});
+  const CarouselItems({required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -88,23 +89,23 @@ class carouselItems extends StatelessWidget {
   }
 }
 
-class exitWidget extends StatelessWidget {
-  const exitWidget({
+class ExitWidget extends StatelessWidget {
+  const ExitWidget({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-        title: Text("Do you want to Exit App ?"),
+        title: const Text("Do you want to Exit App ?"),
         actions: <Widget>[
           FlatButton(
             onPressed: () => Navigator.pop(context, false),
-            child: Text("No"),
+            child: const Text("No"),
           ),
           FlatButton(
             onPressed: () => Navigator.pop(context, true),
-            child: Text("Yes"),
+            child: const Text("Yes"),
           ),
         ]);
   }
