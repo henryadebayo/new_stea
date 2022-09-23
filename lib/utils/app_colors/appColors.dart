@@ -16,4 +16,7 @@ class AppColors {
 
   static Color? lightBlueColour = Colors.blue[900];
   static Color darkBlueColour = Color(0xFF0E3498);
+  static Color boxLightBlueColour = Color(0xFFCADDEB);
+  static Color box2LightBlueColour = Color(0xFFF2FBFF);
+  static Color boxYellowColour = Color(0xFFFEC300);
 }

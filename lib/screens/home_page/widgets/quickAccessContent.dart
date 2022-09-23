@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stea/screens/devotional_page/devotional_screen.dart';
 import 'package:stea/utils/app_colors/appColors.dart';
+import 'package:stea/utils/app_textStyles/appTextStyle.dart';
 import 'package:stea/widgets/const.dart';
 
 import '../../testimony_page/TestimonyScreen.dart';
@@ -11,28 +11,23 @@ class QuickAccessContent extends StatelessWidget {
   QuickAccessContent({this.labelText, this.onTapFunction});
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 8.0),
-      child: InkWell(
-        onTap: onTapFunction,
-        child: Container(
-          height: 100.0,
-          width: 100.0,
-          child: Center(
-            child: Text(
-              labelText!,
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold, color: Colors.white),
-            ),
+    return InkWell(
+      onTap: onTapFunction,
+      child: Container(
+        height: 100.0,
+        width: 115.0,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(labelText!, style: AppTextStyle.BlackMedium),
+              Icon(Icons.dangerous)
+            ],
           ),
-          decoration: BoxDecoration(
-              image: const DecorationImage(
-                image: AssetImage("assets/images/icon1.png"),
-                fit: BoxFit.cover,
-              ),
-              // color: Color(0xFF0E3E3E3),
-              borderRadius: BorderRadius.circular(10.0)),
         ),
+        decoration: BoxDecoration(
+            color: AppColors.boxLightBlueColour,
+            borderRadius: BorderRadius.circular(10.0)),
       ),
     );
   }
@@ -43,49 +38,30 @@ class QuickAccessIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          QuickAccessContent(
-            onTapFunction: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const DevotionalScreen()));
-            },
-            labelText: "Devotionals",
-          ),
-          QuickAccessContent(
-            onTapFunction: () {
-              _bottomSheet(context);
-            },
-            labelText: "Donations",
-          ),
-          QuickAccessContent(
-            onTapFunction: () {
-              _bottomSheet(context);
-            },
-            labelText: "Offering",
-          ),
-          QuickAccessContent(
-            onTapFunction: () {
-              _bottomSheet(context);
-            },
-            labelText: "Tithe",
-          ),
-          QuickAccessContent(
-            onTapFunction: () {
-              // color: Colors.white,
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const TestimonyScreen()));
-            },
-            labelText: "Testimonies",
-          ),
-          QuickAccessContent(
-            labelText: "Branches",
-          ),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        QuickAccessContent(
+          onTapFunction: () {
+            _bottomSheet(context);
+          },
+          labelText: "Offering",
+        ),
+        QuickAccessContent(
+          onTapFunction: () {
+            _bottomSheet(context);
+          },
+          labelText: "Prayer Request",
+        ),
+        QuickAccessContent(
+          onTapFunction: () {
+            // color: Colors.white,
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (BuildContext context) => const TestimonyScreen()));
+          },
+          labelText: "Tithes",
+        ),
+      ],
     );
   }
 }

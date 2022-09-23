@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:stea/data/Services/carousel_image_service.dart';
 import 'package:stea/screens/bottom_navigation/bottomNavigation.dart';
 import 'package:stea/widgets/sigIn_widget.dart';
 
@@ -16,6 +17,7 @@ class _RegisterPageState extends State<RegisterPage> {
   String? _firstname;
   final formKey = GlobalKey<FormState>();
   final mainKey = GlobalKey<ScaffoldState>();
+  CarouselServices gt = CarouselServices();
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +68,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 InkWell(
                     onTap: onPressed,
                     onDoubleTap: () {
+                    //  gt.listFiles();
+
                       //yt.getVideos();
                       // YTVideoModel hg = videoModelFromJson(
                       //     YoutubeServices.getYouTubeVideos(

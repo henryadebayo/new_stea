@@ -5,6 +5,7 @@ import 'package:stea/widgets/appCloser.dart';
 import '../../utils/app_colors/appColors.dart';
 import '../devotional_page/devotional_screen.dart';
 import '../home_page/home_screen.dart';
+import '../profile_page/profileScreen.dart';
 
 class BottomNavigationWidget extends StatefulWidget {
   final String? userName;
@@ -20,8 +21,9 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
 
   List<Widget> pages = [
     const HomeScreen(),
-    const DevotionalScreen(),
     const SermonsScreen(),
+    const DevotionalScreen(),
+    const ProfileScreen(),
   ];
 
   @override
@@ -33,6 +35,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
           selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
           unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
           selectedItemColor: AppColors.darkBlueColour,
+          unselectedItemColor: AppColors.darkBlueColour.withOpacity(0.5),
           onTap: (index) {
             setState(() {
               currentTabIndex = index;
@@ -44,12 +47,16 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
+              icon: Icon(Icons.multitrack_audio_sharp),
+              label: 'Sermons',
+            ),
+            BottomNavigationBarItem(
               icon: Icon(Icons.my_library_books),
               label: 'Devotionals',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.multitrack_audio_sharp),
-              label: 'Sermons',
+              icon: Icon(Icons.person),
+              label: 'Profile',
             ),
           ],
         ),
