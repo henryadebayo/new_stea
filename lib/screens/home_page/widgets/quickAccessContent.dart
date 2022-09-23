@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:stea/utils/app_colors/appColors.dart';
 import 'package:stea/utils/app_textStyles/appTextStyle.dart';
 import 'package:stea/widgets/const.dart';
@@ -21,7 +22,9 @@ class QuickAccessContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(labelText!, style: AppTextStyle.BlackMedium),
-              Icon(Icons.dangerous)
+              SvgPicture.asset(
+                "assets/svgs/tithe.svg",
+              ),
             ],
           ),
         ),

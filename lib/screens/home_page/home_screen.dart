@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:stea/screens/home_page/widgets/quickAccessContent.dart';
 import 'package:stea/utils/app_textStyles/appTextStyle.dart';
 import 'package:stea/widgets/buildAppbarLogo.dart';
@@ -156,14 +157,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text("Daily Verse",
                       style:
                           AppTextStyle.BlackMedium.copyWith(fontSize: 16.0.sp)),
-                  Container(
-                    height: 80.0.h,
-                    width: 330.0.w,
-                    child: const Image(
-                      image: AssetImage("assets/images/ds.png"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  SizedBox(
+                      height: 80.0.h,
+                      width: 330.0.w,
+                      child: SvgPicture.asset(
+                        "assets/svgs/dVerses.svg",
+                        height: 80.0.h,
+                        width: 330.0.w,
+                      )),
                   SizedBox(height: 30.0.h),
                   Text("Upcoming Programs/Services",
                       style:
