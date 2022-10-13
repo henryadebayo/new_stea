@@ -9,7 +9,7 @@ class Button extends StatelessWidget {
   final double? width;
   final double? heigth;
   final String? styles;
-  Button({this.labelText, this.heigth, this.width, this.styles});
+  const Button({Key? key, this.labelText, this.heigth, this.width, this.styles}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +21,7 @@ class Button extends StatelessWidget {
         child: Center(
             child: Text(
           "$labelText",
-          style: TextStyle(fontFamily: "GoogleSans", color: Colors.blue),
+          style: const TextStyle(fontFamily: "GoogleSans", color: Colors.blue),
         )));
   }
 }
@@ -33,10 +33,10 @@ class welcomeButton extends StatelessWidget {
   var onPressed;
 
   welcomeButton(
-      {required this.labelText,
+      {Key? key, required this.labelText,
       required this.containerHeight,
       required this.containerWidth,
-      required this.onPressed});
+      required this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class welcomeButton extends StatelessWidget {
         child: Center(
           child: Text(
             labelText, // "Already a Member",
-            style: TextStyle(fontFamily: "GoogleSans", color: Colors.white),
+            style: const TextStyle(fontFamily: "GoogleSans", color: Colors.white),
           ),
         ),
       ),
@@ -61,34 +61,37 @@ class welcomeButton extends StatelessWidget {
 }
 
 class RoundWhiteButton extends StatelessWidget {
-  String label;
-  double height;
-  double? width;
+  final String label;
+  final double height;
+  final double? width;
   var onTap;
-  RoundWhiteButton({
+   RoundWhiteButton({Key? key,
     required this.label,
     required this.height,
     this.width,
     required this.onTap,
-  });
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 20, right: 20.0, bottom: 40.0),
+      margin: const EdgeInsets.only(left: 20, right: 20.0, bottom: 40.0),
       height: height,
       width: width,
-      child: RaisedButton(
+      child:
+    ElevatedButton(
+      style:  ElevatedButton.styleFrom(
         elevation: 0.0,
+        backgroundColor: Colors.white,
+        minimumSize: const Size(88, 36),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18.0.r),
           side: BorderSide(color: AppColors.darkBlueColour),
         ),
-        onPressed: onTap,
-        padding: EdgeInsets.symmetric(horizontal: 10.0.w, vertical: 10.0.h),
-        color: Colors.white,
-        textColor: AppColors.darkBlueColour,
-        child: Text(label, style: TextStyle(fontSize: 20.0.sp)),
       ),
+      onPressed: onTap,
+     child: Text(label, style: TextStyle(fontSize: 20.0.sp, color:AppColors.darkBlueColour )),
+    ),
     );
   }
 }

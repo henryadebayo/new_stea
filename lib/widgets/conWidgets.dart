@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/cupertino.dart';
 import '../utils/app_colors/appColors.dart';
 
 class AboutUsImageContainer extends StatelessWidget {
@@ -99,11 +99,11 @@ class ExitWidget extends StatelessWidget {
     return AlertDialog(
         title: const Text("Do you want to Exit App ?"),
         actions: <Widget>[
-          FlatButton(
+          TextButton(
             onPressed: () => Navigator.pop(context, false),
             child: const Text("No"),
           ),
-          FlatButton(
+          TextButton(
             onPressed: () => Navigator.pop(context, true),
             child: const Text("Yes"),
           ),
