@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stea/screens/devotional_page/widgets/free_devotional_widget.dart';
+import 'package:stea/screens/devotional_page/widgets/premium_devotional_widget.dart';
 
 import '../../utils/app_colors/appColors.dart';
 import '../../widgets/curved_custom_tabBar.dart';
@@ -76,9 +77,15 @@ class _DevotionalScreenState extends State<DevotionalScreen> {
                       ),
                       Expanded(
                         child: ListView.builder(
-                          itemBuilder: (context, _) => Padding(
-                            padding: EdgeInsets.only(bottom: 16.0.h),
-                            child: const AudioSermonWidget(),
+                          itemBuilder: (context, int index) => Padding(
+                            padding: EdgeInsets.only(top: 16.0.h),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: const [
+                                PremiumDevotionalWidget(),
+                                PremiumDevotionalWidget(),
+                              ],
+                            ),
                           ),
                         ),
                       ),

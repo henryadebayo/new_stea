@@ -46,7 +46,7 @@ class _MyWelcomePageState extends State<MyWelcomePage> {
             SizedBox(
               height: 150.0.h,
             ),
-            welcomeButton(
+            WelcomeButton(
                 containerWidth: 100.0.w,
                 containerHeight: 60.0.h,
                 labelText: "Register",
@@ -63,7 +63,7 @@ class _MyWelcomePageState extends State<MyWelcomePage> {
             SizedBox(
               height: 10.0.h,
             ),
-            welcomeButton(
+            WelcomeButton(
               containerHeight: 60.0.h,
               containerWidth: 300.0.w,
               labelText: "Already a member",

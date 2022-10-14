@@ -14,9 +14,12 @@ class AddTestimonyScreen extends StatelessWidget {
       appBar: AppBar(
         iconTheme: IconThemeData(color: AppColors.darkBlueColour),
         backgroundColor: Colors.white,
-        title: Text(
-          "Back",
-          style: TextStyle(color: AppColors.darkBlueColour),
+        title:  Text(
+          "Share Testimony",
+          style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 16.0.sp),
         ),
       ),
       body: SingleChildScrollView(
@@ -25,9 +28,6 @@ class AddTestimonyScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 20.0.h,
-              ),
               Center(
                 child: Text(
                   "Share your Testimony",

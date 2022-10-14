@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:stea/screens/prayers_page/prayer_screen.dart';
 import 'package:stea/utils/app_colors/appColors.dart';
 import 'package:stea/utils/app_textStyles/appTextStyle.dart';
@@ -107,55 +106,162 @@ _bottomSheet(context) {
                       height: 5.0,
                       width: 70.0,
                       decoration: BoxDecoration(
-                          color: AppColors.darkBlueColour,
+                          color: AppColors.ojBlueColour,
                           borderRadius: BorderRadius.circular(20.0)),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Text("Donations",
+                  const Padding(
+                    padding:  EdgeInsets.all(15.0),
+                    child: Text("Tithes & Offering",
                         style: TextStyle(
-                            color: AppColors.darkBlueColour,
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.w500)),
+                            color: Colors.black,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold)),
                   ),
-                  const SizedBox(
-                    height: 5.0,
+                   SizedBox(
+                    height: 16.0.h,
                   ),
                   Text(
-                    "All Donation can be made to the\nSTEA bank Account Number Below.",
+                    "For Tithe",
                     style: TextStyle(
-                      color: AppColors.darkBlueColour,
+                      color: AppColors.ojBlueColour,
                       fontSize: 15.0,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 40.0),
+                  SizedBox(height: 8.0.h),
+                  Wrap(
+                    children: [
+                      Text(
+                        "Account Number: ",
+                        style: TextStyle(
+                          color: AppColors.ojDarkBlueColour,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      Text(
+                        KchurchAcc,
+                        style: TextStyle(
+                          color: AppColors.ojDarkBlueColour,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  Wrap(
+                    children: [
+                      Text(
+                        "Account Name: ",
+                        style: TextStyle(
+                          color: AppColors.ojDarkBlueColour,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      Text(
+                        KbankAccName,
+                        style: TextStyle(
+                          color: AppColors.ojDarkBlueColour,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  Wrap(
+                    children: [
+                      Text(
+                        "Bank Name: ",
+                        style: TextStyle(
+                          color: AppColors.ojDarkBlueColour,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      Text(
+                        KbankName,
+                        style: TextStyle(
+                          color: AppColors.ojDarkBlueColour,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
+
+
+                  SizedBox(height: 16.0.h),
+
                   Text(
-                    KchurchAcc,
+                    "For Offering",
                     style: TextStyle(
-                      color: AppColors.darkBlueColour,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.w900,
+                      color: AppColors.ojBlueColour,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
-                    KbankAccName,
-                    style: TextStyle(
-                      color: AppColors.darkBlueColour,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.w900,
-                    ),
+                  SizedBox(height: 8.0.h),
+                  Wrap(
+                    children: [
+                      Text(
+                        "Account Number: ",
+                        style: TextStyle(
+                          color: AppColors.ojDarkBlueColour,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      Text(
+                        KchurchAcc,
+                        style: TextStyle(
+                          color: AppColors.ojDarkBlueColour,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
                   ),
-                  Text(
-                    KbankName,
-                    style: TextStyle(
-                      color: AppColors.darkBlueColour,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.w900,
-                    ),
+
+                  Wrap(
+                    children: [
+                      Text(
+                        "Account Name: ",
+                        style: TextStyle(
+                          color: AppColors.ojDarkBlueColour,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      Text(
+                        KbankAccName,
+                        style: TextStyle(
+                          color: AppColors.ojDarkBlueColour,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
                   ),
-                  //Divider(height: 10.0 ,),
+
+                  Wrap(
+                    children: [
+                      Text(
+                        "Bank Name: ",
+                        style: TextStyle(
+                          color: AppColors.ojDarkBlueColour,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      Text(
+                        KbankName,
+                        style: TextStyle(
+                          color: AppColors.ojDarkBlueColour,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ],
+                  ),
+
                   const SizedBox(
                     height: 40.0,
                   ),

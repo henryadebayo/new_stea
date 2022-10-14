@@ -53,7 +53,7 @@ class CustomSocialTextButton extends StatelessWidget {
             ],
           ),
           style: TextButton.styleFrom(
-              backgroundColor: buttonColor ?? AppColors.darkBlueColour)),
+              backgroundColor: buttonColor ?? AppColors.ojButtonBlueColour)),
     );
   }
 }
@@ -93,7 +93,7 @@ class CustomTextButton extends StatelessWidget {
             ),
           ),
           style: TextButton.styleFrom(
-              backgroundColor: buttonColor ?? AppColors.darkBlueColour)),
+              backgroundColor: buttonColor ??  AppColors.ojButtonBlueColour)),
     );
   }
 }

@@ -26,13 +26,13 @@ class Button extends StatelessWidget {
   }
 }
 
-class welcomeButton extends StatelessWidget {
+class WelcomeButton extends StatelessWidget {
   final String labelText;
   final double containerHeight;
   final double containerWidth;
   var onPressed;
 
-  welcomeButton(
+  WelcomeButton(
       {Key? key, required this.labelText,
       required this.containerHeight,
       required this.containerWidth,

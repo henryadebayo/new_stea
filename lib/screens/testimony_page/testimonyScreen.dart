@@ -24,9 +24,12 @@ class TestimonyScreen extends StatelessWidget {
       appBar: AppBar(
         iconTheme: IconThemeData(color: AppColors.darkBlueColour),
         backgroundColor: Colors.white,
-        title: const Text(
-          "Back",
-          style: TextStyle(color: Colors.black),
+        title: Text(
+          "Testimonies",
+          style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 18.0.sp),
         ),
       ),
       body: RefreshIndicator(
@@ -82,7 +85,7 @@ class TestimonyScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 16,
               ),
               Text(
@@ -97,18 +100,6 @@ class TestimonyScreen extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          SizedBox(
-            height: 20.0.h,
-          ),
-          Center(
-            child: Text(
-              "Testimonies",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18.0.sp),
-            ),
-          ),
           SizedBox(
             height: 20.0.h,
           ),

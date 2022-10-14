@@ -1,20 +1,20 @@
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../prayers_page/widgets/button.dart';
 
-class FreeDevoWidget extends StatelessWidget {
-  const FreeDevoWidget({
-    Key? key,
-  }) : super(key: key);
+class PremiumDevotionalWidget extends StatelessWidget {
+  const PremiumDevotionalWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return
-      Container(
+    return   Container(
       height: 200.h,
       width: 150.w,
-      decoration: const BoxDecoration(
+      decoration:  const BoxDecoration(
         boxShadow: [
           BoxShadow(
               spreadRadius: 0.1,
@@ -31,7 +31,7 @@ class FreeDevoWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Container(
-            height: 90.0.h,
+            height: 110.0.h,
             decoration: const BoxDecoration(
               color: Colors.white,
             ),
@@ -60,11 +60,18 @@ class FreeDevoWidget extends StatelessWidget {
                   SizedBox(
                     height: 8.0.h,
                   ),
+                  const Text(
+                    "N2,500",
+                    style: TextStyle(color: Colors.black, fontSize: 12.0, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 8.0.h,
+                  ),
                   CustomTextButton(
                     height: 25.0.h,
                     width: 100.0.w,
-                    label: "Read",
-                      onSubmit: (){},),
+                    label: "Purchase",
+                    onSubmit: (){},),
                 ],
               ),
             ),
@@ -74,4 +81,3 @@ class FreeDevoWidget extends StatelessWidget {
     );
   }
 }
-
