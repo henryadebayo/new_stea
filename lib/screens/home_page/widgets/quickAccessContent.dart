@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:stea/screens/prayers_page/prayer_screen.dart';
 import 'package:stea/utils/app_colors/appColors.dart';
 import 'package:stea/utils/app_textStyles/appTextStyle.dart';
 import 'package:stea/widgets/const.dart';
@@ -9,63 +11,75 @@ import '../../testimony_page/TestimonyScreen.dart';
 class QuickAccessContent extends StatelessWidget {
   final String? labelText;
   var onTapFunction;
-  QuickAccessContent({this.labelText, this.onTapFunction});
+  QuickAccessContent({Key? key, this.labelText, this.onTapFunction}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTapFunction,
-      child: Container(
-        height: 100.0,
-        width: 115.0,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(labelText!, style: AppTextStyle.BlackMedium),
-              SvgPicture.asset(
-                "assets/svgs/tithe.svg",
-              ),
-            ],
+    return
+      Padding(
+        padding:  EdgeInsets.only(left: 8.0.w),
+        child: InkWell(
+        onTap: onTapFunction,
+        child: Container(
+          height: 100.0,
+          width: 115.0,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(labelText!, style: AppTextStyle.BlackMedium),
+              ],
+            ),
           ),
+          decoration: BoxDecoration(
+              color: AppColors.boxLightBlueColour,
+              borderRadius: BorderRadius.circular(10.0)),
         ),
-        decoration: BoxDecoration(
-            color: AppColors.boxLightBlueColour,
-            borderRadius: BorderRadius.circular(10.0)),
-      ),
-    );
+    ),
+      );
   }
 }
 
-class QuickAccessIcon extends StatelessWidget {
-  const QuickAccessIcon({Key? key}) : super(key: key);
+class QuickAccessWidget extends StatelessWidget {
+  const QuickAccessWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        QuickAccessContent(
-          onTapFunction: () {
-            _bottomSheet(context);
-          },
-          labelText: "Offering",
-        ),
-        QuickAccessContent(
-          onTapFunction: () {
-            _bottomSheet(context);
-          },
-          labelText: "Prayer Request",
-        ),
-        QuickAccessContent(
-          onTapFunction: () {
-            // color: Colors.white,
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (BuildContext context) => const TestimonyScreen()));
-          },
-          labelText: "Tithes",
-        ),
-      ],
-    );
+    return
+      SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          QuickAccessContent(
+            onTapFunction: () {
+              _bottomSheet(context);
+            },
+            labelText: "Tithes &\nOffering",
+          ),
+          QuickAccessContent(
+            onTapFunction: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const PrayerScreen()));
+            },
+            labelText: "Prayer Requests",
+          ),
+          QuickAccessContent(
+            onTapFunction: () {
+              _bottomSheet(context);
+            },
+            labelText: "Donations",
+          ),
+          QuickAccessContent(
+            onTapFunction: () {
+              // color: Colors.white,
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const TestimonyScreen()));
+            },
+            labelText: "Testimonies",
+          ),
+        ],
+    ),
+      );
   }
 }
 

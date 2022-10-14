@@ -15,8 +15,10 @@ class AppColors {
   });
 
   static Color? lightBlueColour = Colors.blue[900];
-  static Color darkBlueColour = Color(0xFF0E3498);
-  static Color boxLightBlueColour = Color(0xFFCADDEB);
-  static Color box2LightBlueColour = Color(0xFFF2FBFF);
-  static Color boxYellowColour = Color(0xFFFEC300);
+  static Color darkBlueColour = const Color(0xFF0E3498);
+  static Color ojBlueColour = const Color(0xFF0062F7);
+  static Color ojBlueColour2 = const Color(0xFFF3F5F7);
+  static Color boxLightBlueColour = const Color(0xFFCADDEB);
+  static Color box2LightBlueColour = const Color(0xFFF2FBFF);
+  static Color boxYellowColour = const Color(0xFFFEC300);
 }

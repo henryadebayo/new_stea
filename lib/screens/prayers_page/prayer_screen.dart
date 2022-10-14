@@ -15,7 +15,7 @@ class PrayerScreen extends StatelessWidget {
         iconTheme: IconThemeData(color: AppColors.darkBlueColour),
         backgroundColor: Colors.white,
         title: Text(
-          "Back",
+          "Prayers",
           style: TextStyle(color: AppColors.darkBlueColour),
         ),
       ),
@@ -26,7 +26,7 @@ class PrayerScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 20.0.h,
+                height: 16.0.h,
               ),
               Text(
                 "Do you need a prayer?",

@@ -24,26 +24,17 @@ class _DevotionalScreenState extends State<DevotionalScreen> {
           appBar: AppBar(
             iconTheme: IconThemeData(color: AppColors.darkBlueColour),
             backgroundColor: Colors.white,
-            title: Text(
-              "Back",
-              style: TextStyle(color: AppColors.darkBlueColour),
+            title: const Text(
+              "Devotionals",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontSize: 20.0),
             ),
           ),
           body: EdgePadding(
             child: Column(
               children: [
-                const Center(
-                  child: Text(
-                    "Devotionals",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontSize: 20.0),
-                  ),
-                ),
-                SizedBox(
-                  height: 16.0.h,
-                ),
                 Container(
                   height: 35.0.h,
                   width: 310.w,
@@ -56,7 +47,7 @@ class _DevotionalScreenState extends State<DevotionalScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 8.0.h,
+                  height: 16.0.h,
                 ),
                 SearchField2(
                   hintT: 'Search devotionals here',
