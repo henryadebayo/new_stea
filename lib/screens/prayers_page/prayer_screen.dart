@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stea/core/widgets/secondary_appbar_text.dart';
 import 'package:stea/screens/prayers_page/widgets/button.dart';
 import 'package:stea/screens/prayers_page/widgets/textFormWidget.dart';
 
@@ -14,9 +15,8 @@ class PrayerScreen extends StatelessWidget {
       appBar: AppBar(
         iconTheme: IconThemeData(color: AppColors.darkBlueColour),
         backgroundColor: Colors.white,
-        title: Text(
-          "Prayers",
-          style: TextStyle(color: AppColors.darkBlueColour),
+        title: SecondaryAppBarText(
+          title: "Prayers",
         ),
       ),
       body: SingleChildScrollView(

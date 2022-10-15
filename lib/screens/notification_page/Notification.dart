@@ -24,24 +24,21 @@ class _NotificationScreenState extends State<NotificationScreen> {
           color: AppColors.lightBlueColour!,
           child: const Text(
             "Notification",
-            style: TextStyle(
-              fontFamily: " GoogleSans",
-            ),
           ),
         ),
-        actions:  [
+        actions: [
           Padding(
-            padding: EdgeInsets.only(right: 16.0.w),
-            child:  IconButton(onPressed:(){}, icon:   const Icon(Icons.more_vert_sharp))
-          ),
+              padding: EdgeInsets.only(right: 16.0.w),
+              child: IconButton(
+                  onPressed: () {}, icon: const Icon(Icons.more_vert_sharp))),
         ],
       ),
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 8.0.w),
+        padding: EdgeInsets.symmetric(horizontal: 8.0.w),
         child: ListView.builder(
           itemBuilder: (BuildContext context, int index) {
-            return  const NotificationWidget();
-            },
+            return const NotificationWidget();
+          },
         ),
       ),
     );

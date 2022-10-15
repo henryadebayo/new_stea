@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stea/core/widgets/secondary_appbar_text.dart';
 
 import '../../utils/app_colors/appColors.dart';
 import '../prayers_page/widgets/button.dart';
@@ -14,12 +15,8 @@ class AddTestimonyScreen extends StatelessWidget {
       appBar: AppBar(
         iconTheme: IconThemeData(color: AppColors.darkBlueColour),
         backgroundColor: Colors.white,
-        title:  Text(
-          "Share Testimony",
-          style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 16.0.sp),
+        title: SecondaryAppBarText(
+          title: "Testimony",
         ),
       ),
       body: SingleChildScrollView(
