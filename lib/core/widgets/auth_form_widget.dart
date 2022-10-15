@@ -7,7 +7,7 @@ String? emailAddress;
 String? phoneNumber;
 String? address;
 
-Widget buildFirstNameFormField({required String? name}) {
+Widget buildFirstNameFormField() {
   return TextFormField(
     decoration: InputDecoration(
       border: OutlineInputBorder(
@@ -23,12 +23,10 @@ Widget buildFirstNameFormField({required String? name}) {
         horizontal: 19.w,
         vertical: 15.h,
       ),
-      hintText: "label",
+      hintText: "first name",
       hintStyle: TextStyle(fontSize: 14.sp),
     ),
-    onSaved: (firstName) {
-      name = firstName!;
-    },
+    onSaved: (firstName) {},
     validator: (String? firstName) {
       String errorMessage;
       if (firstName!.isEmpty) {
@@ -96,7 +94,7 @@ Widget buildEmailAddressFormField() {
       validator: (String? email) {
         String errorMessage;
         if (!email!.contains("@") && email.isEmpty) {
-          errorMessage = "email address is incorrect";
+          errorMessage = "please enter a valid email address";
           return errorMessage;
         }
       });
@@ -121,7 +119,7 @@ Widget buildPhoneNumberFormField() {
           horizontal: 19.w,
           vertical: 15.h,
         ),
-        hintText: "+234",
+        hintText: "enter phone number",
         hintStyle: TextStyle(fontSize: 14.sp),
       ),
       onSaved: (String? phoneNumberr) {
@@ -129,7 +127,7 @@ Widget buildPhoneNumberFormField() {
       },
       validator: (String? phoneNumber) {
         if (phoneNumber!.isEmpty) {
-          return "please fill in your last name";
+          return "please fill in your phone number";
         }
       });
 }
@@ -151,7 +149,7 @@ Widget buildAddressFormField() {
         horizontal: 19.w,
         vertical: 15.h,
       ),
-      hintText: "Address",
+      hintText: "Location/Home Address",
       hintStyle: TextStyle(fontSize: 14.sp),
     ),
     onSaved: (String? addresss) {

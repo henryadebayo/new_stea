@@ -5,10 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stea/screens/home_page/widgets/quickAccessContent.dart';
 import 'package:stea/screens/home_page/widgets/up_coming_event_widget.dart';
+import 'package:stea/screens/notification_page/Notification.dart';
 import 'package:stea/utils/app_textStyles/appTextStyle.dart';
 import 'package:stea/widgets/buildAppbarLogo.dart';
-import 'package:stea/widgets/const.dart';
 
+import '../../core/widgets/appbar_text_widget.dart';
 import '../../utils/app_colors/appColors.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -55,14 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
         automaticallyImplyLeading: false,
         centerTitle: true,
         backgroundColor: AppColors.darkBlueColour,
-        title: Text(
-          "STEA",
-          style: TextStyle(
-              fontFamily: KfontFamily,
-              letterSpacing: 18.0,
-              fontWeight: FontWeight.bold,
-              fontSize: 20.0.sp),
-        ),
+        title: const AppBarText(),
         actions: <Widget>[
           buildShoppingCart(),
           SizedBox(width: 20.0.w),
@@ -93,27 +87,34 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  Stack(children: [
-                    Icon(
-                      Icons.notifications,
-                      size: 30.0,
-                      color: AppColors.darkBlueColour,
-                    ),
-                    Positioned(
-                      left: 17.0,
-                      top: 3.0,
-                      child: CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 5.0,
-                        child: Center(
-                          child: CircleAvatar(
-                            radius: 4.0,
-                            backgroundColor: AppColors.darkBlueColour,
+                  IconButton(
+                    icon: Stack(children: [
+                      Icon(
+                        Icons.notifications,
+                        size: 30.0,
+                        color: AppColors.darkBlueColour,
+                      ),
+                      Positioned(
+                        left: 17.0,
+                        top: 3.0,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 5.0,
+                          child: Center(
+                            child: CircleAvatar(
+                              radius: 4.0,
+                              backgroundColor: AppColors.darkBlueColour,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ]),
+                    ]),
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+                        return const NotificationScreen();
+                      }));
+                    },
+                  ),
                 ],
               ),
             ),
@@ -149,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text("Today's Bible verse",
                       style:
-                      AppTextStyle.BlackMedium.copyWith(fontSize: 16.0.sp)),
+                          AppTextStyle.BlackMedium.copyWith(fontSize: 16.0.sp)),
                   SizedBox(
                       height: 80.0.h,
                       width: 330.0.w,
@@ -163,11 +164,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("Quick Access",
-                          style:
-                          AppTextStyle.BlackMedium.copyWith(fontSize: 16.0.sp)),
+                          style: AppTextStyle.BlackMedium.copyWith(
+                              fontSize: 16.0.sp)),
                       Text("Swipe >>",
-                          style:
-                          AppTextStyle.BlueMedium.copyWith(fontSize: 16.0.sp, color: AppColors.ojBlueColour)),
+                          style: AppTextStyle.BlueMedium.copyWith(
+                              fontSize: 16.0.sp,
+                              color: AppColors.ojBlueColour)),
                     ],
                   ),
                   SizedBox(
@@ -191,4 +193,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-

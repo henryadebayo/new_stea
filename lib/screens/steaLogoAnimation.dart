@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:stea/screens/register.dart';
+import 'package:stea/screens/auth_page/SignUp_screen.dart';
 
 class SteaAnimation extends StatefulWidget {
-
-  const SteaAnimation({Key? key,}) : super(key: key);
+  const SteaAnimation({
+    Key? key,
+  }) : super(key: key);
 
   @override
   _SteaAnimationState createState() => _SteaAnimationState();
@@ -29,8 +30,9 @@ class _SteaAnimationState extends State<SteaAnimation>
               parent: animationController, curve: Curves.fastOutSlowIn))
             ..addStatusListener((status) {
               if (status == AnimationStatus.completed) {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx){
-                  return RegisterPage();
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (ctx) {
+                  return SignUpScreen();
                 }));
               }
             });
@@ -63,14 +65,11 @@ class _SteaAnimationState extends State<SteaAnimation>
                 height: 200.0,
                 width: 200.0,
                 decoration: const BoxDecoration(
-                            image: DecorationImage(
-                          image: AssetImage("assets/images/stealogo.png"),
-
-                        ),
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/stealogo.png"),
+                  ),
                 ),
-              
               ),
-              
             );
           },
         ),

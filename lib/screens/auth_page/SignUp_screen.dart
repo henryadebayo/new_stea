@@ -1,49 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
-import 'package:stea/data/Services/carousel_image_service.dart';
+import 'package:stea/core/widgets/auth_form_widget.dart';
+import 'package:stea/screens/auth_page/widgets/auth_label_widget.dart';
 import 'package:stea/screens/bottom_navigation/bottomNavigation.dart';
-import 'package:stea/widgets/sigIn_widget.dart';
+import 'package:stea/screens/prayers_page/widgets/button.dart';
 
-import '../view_models/youTube_view_model.dart';
-import 'alreadyMember.dart';
+import '../../core/widgets/appbar_text_widget.dart';
+import '../../utils/app_colors/appColors.dart';
+import 'SignIn_screen.dart';
 
-class RegisterPage extends StatefulWidget {
+class SignUpScreen extends StatefulWidget {
   @override
-  _RegisterPageState createState() => _RegisterPageState();
+  _SignUpScreenState createState() => _SignUpScreenState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
-  String? _firstname;
+class _SignUpScreenState extends State<SignUpScreen> {
   final formKey = GlobalKey<FormState>();
   final mainKey = GlobalKey<ScaffoldState>();
-  CarouselServices gt = CarouselServices();
-
   @override
   Widget build(BuildContext context) {
-    YouTubeViewModel testYt = context.watch<YouTubeViewModel>();
-    YouTubeViewModel yt = context.watch<YouTubeViewModel>();
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          centerTitle: true,
+          backgroundColor: AppColors.darkBlueColour,
+          title: const AppBarText(),
+        ),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Container(
-            margin: EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
+            margin: const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
             child: Column(
               children: <Widget>[
-                Text(
-                  "Fill In Your Details ",
-                  style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "GoogleSans",
-                      color: Colors.blue[900]),
+                AuthLabelWidget(
+                  header: "Signing up as a member",
+                  header2:
+                      "Kindly provide us with your correct details in\nthe form below",
                 ),
-                SizedBox(height: 40.0.h),
+                SizedBox(height: 20.0.h),
                 Form(
                   key: formKey,
                   child: Column(children: <Widget>[
-                    buildFirstNameFormField(name: _firstname),
+                    buildFirstNameFormField(),
                     SizedBox(
                       height: 20.h,
                     ),
@@ -66,42 +65,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: 20.0.h,
                 ),
                 InkWell(
-                    onTap: onPressed,
-                    onDoubleTap: () {
-                    //  gt.listFiles();
-
-                      //yt.getVideos();
-                      // YTVideoModel hg = videoModelFromJson(
-                      //     YoutubeServices.getYouTubeVideos(
-                      //         "PLbd9-9nbCzE4GwQX6UL5MZcK571APZ5Yf", ""));
-                      // print(data.toString());
-
-                      // testYt.getVideos();
-                      // if (testYt.loading) {
-                      //   print("loading..");
-                      // } else {
-                      //   print("done");
-                      //   print(testYt.yTVideos.toString());
-                      // }
-
+                    onLongPress: () {
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (ctx) {
                         return const BottomNavigationWidget();
                       }));
                     },
-                    child: Container(
-                      height: 50.0.h,
-                      // width: 20.0,
-                      decoration: BoxDecoration(
-                          color: Colors.blue[900],
-                          borderRadius: BorderRadius.circular(04.0.r)),
-                      child: const Center(
-                          child: Text(
-                        "Become a Member",
-                        style: TextStyle(
-                            fontFamily: "GoogleSans", color: Colors.white),
-                      )),
-                    )),
+                    child: CustomTextButton(label: "Proceed", onSubmit: () {})),
                 SizedBox(
                   height: 10.h,
                 ),
@@ -121,9 +91,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                AlreadyMember()));
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (BuildContext context) => SignInScreen()));
                       },
                       child: Text(
                         "Member",
@@ -152,8 +121,7 @@ class _RegisterPageState extends State<RegisterPage> {
       //var _firstname;
 
       Navigator.of(context).push(MaterialPageRoute(
-          builder: (BuildContext context) =>
-              BottomNavigationWidget(userName: _firstname)));
+          builder: (BuildContext context) => const BottomNavigationWidget()));
     }
   }
 }

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stea/widgets/buton.dart';
 import 'package:stea/widgets/const.dart';
 
-import 'register.dart';
+import 'auth_page/SignUp_screen.dart';
 
 final registerButtonColour = Colors.blue[900];
 
@@ -52,7 +52,7 @@ class _MyWelcomePageState extends State<MyWelcomePage> {
                 labelText: "Register",
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => RegisterPage()));
+                      builder: (BuildContext context) => SignUpScreen()));
                 }),
             Center(
               child: Text(

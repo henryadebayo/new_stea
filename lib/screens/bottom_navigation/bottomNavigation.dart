@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:stea/core/widgets/appCloser.dart';
 import 'package:stea/screens/sermons_page/sermons_screen.dart';
-import 'package:stea/widgets/appCloser.dart';
 
 import '../../utils/app_colors/appColors.dart';
 import '../devotional_page/devotional_screen.dart';

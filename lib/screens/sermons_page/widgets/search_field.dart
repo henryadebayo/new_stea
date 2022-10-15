@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../widgets/sigIn_widget.dart';
+import '../../../core/widgets/auth_form_widget.dart';
 
 class SearchField2 extends StatelessWidget {
   String hintT;
