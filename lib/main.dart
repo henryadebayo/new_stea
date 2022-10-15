@@ -3,8 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:stea/screens/bottom_navigation/bottomNavigation.dart';
-import 'package:stea/screens/steaLogoAnimation.dart';
+import 'package:stea/screens/notification_page/Notification.dart';
 import 'package:stea/view_models/testimony_view_models.dart';
 import 'package:stea/view_models/youTube_view_model.dart';
 import 'package:stea/widgets/const.dart';
@@ -36,7 +35,8 @@ class MyApp extends StatelessWidget {
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
           debugShowCheckedModeBanner: false,
-        home: const SteaAnimation(),
+       home: NotificationScreen(),
+       // home: const SteaAnimation(),
           //home: const BottomNavigationWidget(),
         ),
         designSize: const Size(360, 640),

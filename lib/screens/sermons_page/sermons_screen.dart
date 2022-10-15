@@ -68,7 +68,6 @@ class _SermonsScreenState extends State<SermonsScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: const [
                               VideoSermonWidget(),
-                              VideoSermonWidget(),
                             ],
                           ),
                         ),
