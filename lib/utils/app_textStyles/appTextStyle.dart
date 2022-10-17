@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stea/utils/app_colors/appColors.dart';
 
 class AppTextStyle {
   static const TextStyle Whitelight = TextStyle(
@@ -36,10 +37,10 @@ class AppTextStyle {
       //fontWeight: FontWeight.w300,
       color: Colors.black);
 
-  static const TextStyle BlueMedium = TextStyle(
+  static TextStyle BlueMedium = TextStyle(
       // fontFamily: VeloxFonts.markPro,
       fontWeight: FontWeight.w500,
-      color: Colors.black);
+      color: AppColors.ojButtonBlueColour);
 
   static const TextStyle BlueBold = TextStyle(
       // fontFamily: VeloxFonts.markPro,
