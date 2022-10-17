@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
-import 'package:stea/utils/constants.dart';
+import 'package:stea/core/utils/constants.dart';
 
 import '../models/testimonyModel.dart';
 import 'api_status.dart';

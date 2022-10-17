@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../core/utils/app_colors/appColors.dart';
 import '../screens/welcomePage.dart';
-import '../utils/app_colors/appColors.dart';
 
 class Button extends StatelessWidget {
   final String? labelText;
   final double? width;
   final double? heigth;
   final String? styles;
-  const Button({Key? key, this.labelText, this.heigth, this.width, this.styles}) : super(key: key);
+  const Button({Key? key, this.labelText, this.heigth, this.width, this.styles})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,10 +34,12 @@ class WelcomeButton extends StatelessWidget {
   var onPressed;
 
   WelcomeButton(
-      {Key? key, required this.labelText,
+      {Key? key,
+      required this.labelText,
       required this.containerHeight,
       required this.containerWidth,
-      required this.onPressed}) : super(key: key);
+      required this.onPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +55,8 @@ class WelcomeButton extends StatelessWidget {
         child: Center(
           child: Text(
             labelText, // "Already a Member",
-            style: const TextStyle(fontFamily: "GoogleSans", color: Colors.white),
+            style:
+                const TextStyle(fontFamily: "GoogleSans", color: Colors.white),
           ),
         ),
       ),
@@ -65,7 +69,8 @@ class RoundWhiteButton extends StatelessWidget {
   final double height;
   final double? width;
   var onTap;
-   RoundWhiteButton({Key? key,
+  RoundWhiteButton({
+    Key? key,
     required this.label,
     required this.height,
     this.width,
@@ -77,21 +82,22 @@ class RoundWhiteButton extends StatelessWidget {
       margin: const EdgeInsets.only(left: 20, right: 20.0, bottom: 40.0),
       height: height,
       width: width,
-      child:
-    ElevatedButton(
-      style:  ElevatedButton.styleFrom(
-        elevation: 0.0,
-        backgroundColor: Colors.white,
-        minimumSize: const Size(88, 36),
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0.r),
-          side: BorderSide(color: AppColors.darkBlueColour),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          elevation: 0.0,
+          backgroundColor: Colors.white,
+          minimumSize: const Size(88, 36),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(18.0.r),
+            side: BorderSide(color: AppColors.darkBlueColour),
+          ),
         ),
+        onPressed: onTap,
+        child: Text(label,
+            style:
+                TextStyle(fontSize: 20.0.sp, color: AppColors.darkBlueColour)),
       ),
-      onPressed: onTap,
-     child: Text(label, style: TextStyle(fontSize: 20.0.sp, color:AppColors.darkBlueColour )),
-    ),
     );
   }
 }

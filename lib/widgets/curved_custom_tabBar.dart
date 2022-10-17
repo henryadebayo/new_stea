@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../utils/app_colors/appColors.dart';
+import '../core/utils/app_colors/appColors.dart';
 
 class CustomCurvedTabBar extends StatelessWidget {
   String firstLabel;
@@ -21,7 +21,9 @@ class CustomCurvedTabBar extends StatelessWidget {
       labelColor: Colors.white,
       labelStyle: const TextStyle(fontWeight: FontWeight.w500),
       indicator: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.0.r), color: AppColors.ojButtonBlueColour,),
+        borderRadius: BorderRadius.circular(20.0.r),
+        color: AppColors.ojButtonBlueColour,
+      ),
       tabs: [
         Tab(
           text: firstLabel,

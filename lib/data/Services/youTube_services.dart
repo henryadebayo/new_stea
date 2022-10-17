@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:stea/core/utils/constants.dart';
 
-import '../../utils/constants.dart';
 import 'api_status.dart';
 
 class YoutubeServices {

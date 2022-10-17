@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../utils/app_textStyles/appTextStyle.dart';
+import '../../../core/utils/app_textStyles/appTextStyle.dart';
 
 class AudioSermonWidget extends StatelessWidget {
   const AudioSermonWidget({

@@ -1,12 +1,9 @@
-
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../utils/app_colors/appColors.dart';
-import '../../../utils/app_textStyles/appTextStyle.dart';
+import '../../../core/utils/app_colors/appColors.dart';
+import '../../../core/utils/app_textStyles/appTextStyle.dart';
 
 class UpComingEventWidget extends StatelessWidget {
   const UpComingEventWidget({
@@ -23,8 +20,7 @@ class UpComingEventWidget extends StatelessWidget {
             color: AppColors.boxLightBlueColour,
             borderRadius: BorderRadius.circular(8.0.r)),
         child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: 10.0.w, vertical: 12.0.h),
+          padding: EdgeInsets.symmetric(horizontal: 10.0.w, vertical: 12.0.h),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,16 +31,14 @@ class UpComingEventWidget extends StatelessWidget {
                   Text(
                     "Upcoming Event",
                     style: AppTextStyle.BlueBold.copyWith(
-                        fontSize: 15.0.sp,
-                        color: AppColors.darkBlueColour),
+                        fontSize: 15.0.sp, color: AppColors.darkBlueColour),
                   ),
                   SizedBox(
                     height: 5.0.h,
                   ),
                   Text(
                     "100 random acts\nof kindness.",
-                    style: AppTextStyle.BlackBold.copyWith(
-                        fontSize: 24.0.sp),
+                    style: AppTextStyle.BlackBold.copyWith(fontSize: 24.0.sp),
                   ),
                   SizedBox(
                     height: 16.0.h,
@@ -107,13 +101,11 @@ class UpComingEventWidget extends StatelessWidget {
                 children: [
                   Text(
                     "20",
-                    style: AppTextStyle.BlackBold.copyWith(
-                        fontSize: 24.0.sp),
+                    style: AppTextStyle.BlackBold.copyWith(fontSize: 24.0.sp),
                   ),
                   Text(
                     "Sep",
-                    style: AppTextStyle.BlackMedium.copyWith(
-                        fontSize: 20.0.sp),
+                    style: AppTextStyle.BlackMedium.copyWith(fontSize: 20.0.sp),
                   ),
                 ],
               ),

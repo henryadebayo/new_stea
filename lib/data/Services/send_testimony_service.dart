@@ -1,25 +1,22 @@
 import 'dart:convert';
-import 'package:http/http.dart'as http;
-import 'package:stea/utils/constants.dart';
 
+import 'package:http/http.dart' as http;
+import 'package:stea/core/utils/constants.dart';
 
-class SendTestimonyService{
-
-
-  Future<bool> sendTes(String name,details) async {
-  //  loading = true;
+class SendTestimonyService {
+  Future<bool> sendTes(String name, details) async {
+    //  loading = true;
     //notifyListeners();
     try {
-
       final Map<String, dynamic> tdata = {
         "name": name,
-        "details":details,
+        "details": details,
       };
-      http.Response response = await http.post(Uri.parse(Konstants.TESTIMONY_URL),
-          body: json.encode(tdata));
+      http.Response response = await http
+          .post(Uri.parse(Konstants.TESTIMONY_URL), body: json.encode(tdata));
       print(response.statusCode);
       print(response.body);
-     // loading = false;
+      // loading = false;
       //notifyListeners();
       return Future.value(true);
     } catch (e) {
@@ -27,8 +24,6 @@ class SendTestimonyService{
       //notifyListeners();
       print("connection error $e");
       return Future.value(false);
-
     }
   }
-
 }

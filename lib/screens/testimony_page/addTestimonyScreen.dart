@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stea/core/widgets/secondary_appbar_text.dart';
 
-import '../../utils/app_colors/appColors.dart';
+import '../../core/utils/app_colors/appColors.dart';
 import '../prayers_page/widgets/button.dart';
 import '../prayers_page/widgets/textFormWidget.dart';
 

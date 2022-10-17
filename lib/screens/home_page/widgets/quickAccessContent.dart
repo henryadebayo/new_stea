@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stea/core/utils/app_colors/appColors.dart';
+import 'package:stea/core/utils/app_textStyles/appTextStyle.dart';
 import 'package:stea/screens/prayers_page/prayer_screen.dart';
-import 'package:stea/utils/app_colors/appColors.dart';
-import 'package:stea/utils/app_textStyles/appTextStyle.dart';
 import 'package:stea/widgets/const.dart';
 
 import '../../testimony_page/TestimonyScreen.dart';
@@ -10,13 +10,13 @@ import '../../testimony_page/TestimonyScreen.dart';
 class QuickAccessContent extends StatelessWidget {
   final String? labelText;
   var onTapFunction;
-  QuickAccessContent({Key? key, this.labelText, this.onTapFunction}) : super(key: key);
+  QuickAccessContent({Key? key, this.labelText, this.onTapFunction})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return
-      Padding(
-        padding:  EdgeInsets.only(left: 8.0.w),
-        child: InkWell(
+    return Padding(
+      padding: EdgeInsets.only(left: 8.0.w),
+      child: InkWell(
         onTap: onTapFunction,
         child: Container(
           height: 100.0,
@@ -33,8 +33,8 @@ class QuickAccessContent extends StatelessWidget {
               color: AppColors.boxLightBlueColour,
               borderRadius: BorderRadius.circular(10.0)),
         ),
-    ),
-      );
+      ),
+    );
   }
 }
 
@@ -43,10 +43,9 @@ class QuickAccessWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-      SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           QuickAccessContent(
@@ -77,8 +76,8 @@ class QuickAccessWidget extends StatelessWidget {
             labelText: "Testimonies",
           ),
         ],
-    ),
-      );
+      ),
+    );
   }
 }
 
@@ -111,14 +110,14 @@ _bottomSheet(context) {
                     ),
                   ),
                   const Padding(
-                    padding:  EdgeInsets.all(15.0),
+                    padding: EdgeInsets.all(15.0),
                     child: Text("Tithes & Offering",
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 16.0,
                             fontWeight: FontWeight.bold)),
                   ),
-                   SizedBox(
+                  SizedBox(
                     height: 16.0.h,
                   ),
                   Text(
@@ -149,7 +148,6 @@ _bottomSheet(context) {
                       ),
                     ],
                   ),
-
                   Wrap(
                     children: [
                       Text(
@@ -169,7 +167,6 @@ _bottomSheet(context) {
                       ),
                     ],
                   ),
-
                   Wrap(
                     children: [
                       Text(
@@ -189,10 +186,7 @@ _bottomSheet(context) {
                       ),
                     ],
                   ),
-
-
                   SizedBox(height: 16.0.h),
-
                   Text(
                     "For Offering",
                     style: TextStyle(
@@ -221,7 +215,6 @@ _bottomSheet(context) {
                       ),
                     ],
                   ),
-
                   Wrap(
                     children: [
                       Text(
@@ -241,7 +234,6 @@ _bottomSheet(context) {
                       ),
                     ],
                   ),
-
                   Wrap(
                     children: [
                       Text(
@@ -261,7 +253,6 @@ _bottomSheet(context) {
                       ),
                     ],
                   ),
-
                   const SizedBox(
                     height: 40.0,
                   ),

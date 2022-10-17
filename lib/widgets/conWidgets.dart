@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import '../utils/app_colors/appColors.dart';
+import 'package:flutter/material.dart';
+
+import '../core/utils/app_colors/appColors.dart';
 
 class AboutUsImageContainer extends StatelessWidget {
   String imageName;

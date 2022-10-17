@@ -4,7 +4,7 @@ import 'package:stea/screens/sermons_page/widgets/audio_sermon_widget.dart';
 import 'package:stea/screens/sermons_page/widgets/search_field.dart';
 import 'package:stea/screens/sermons_page/widgets/videoWidget.dart';
 
-import '../../utils/app_colors/appColors.dart';
+import '../../core/utils/app_colors/appColors.dart';
 import '../../widgets/curved_custom_tabBar.dart';
 import '../../widgets/edge_padding.dart';
 
@@ -26,10 +26,10 @@ class _SermonsScreenState extends State<SermonsScreen> {
           backgroundColor: Colors.white,
           title: const Text(
             "Sermons",
-              style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-              fontSize: 20.0),
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontSize: 20.0),
           ),
         ),
         body: EdgePadding(

@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stea/core/utils/app_textStyles/appTextStyle.dart';
 import 'package:stea/screens/auth_page/SignUp_screen.dart';
 import 'package:stea/screens/prayers_page/widgets/button.dart';
-import 'package:stea/utils/app_textStyles/appTextStyle.dart';
 
-import '../../utils/app_colors/appColors.dart';
+import '../../core/utils/app_colors/appColors.dart';
 import 'SignIn_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {

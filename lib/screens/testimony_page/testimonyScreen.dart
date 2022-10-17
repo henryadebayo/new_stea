@@ -5,8 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:stea/screens/testimony_page/widgets/testimonyCard.dart';
 
+import '../../core/utils/app_colors/appColors.dart';
 import '../../data/Services/testimony_services.dart';
-import '../../utils/app_colors/appColors.dart';
 import '../../view_models/testimony_view_models.dart';
 import 'addTestimonyScreen.dart';
 

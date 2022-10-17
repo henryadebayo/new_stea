@@ -5,8 +5,8 @@ import 'package:stea/screens/auth_page/widgets/auth_label_widget.dart';
 import 'package:stea/screens/bottom_navigation/bottomNavigation.dart';
 import 'package:stea/screens/prayers_page/widgets/button.dart';
 
+import '../../core/utils/app_colors/appColors.dart';
 import '../../core/widgets/appbar_text_widget.dart';
-import '../../utils/app_colors/appColors.dart';
 import 'SignIn_screen.dart';
 
 class SignUpScreen extends StatefulWidget {

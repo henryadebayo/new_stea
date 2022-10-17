@@ -3,14 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:stea/core/utils/app_textStyles/appTextStyle.dart';
 import 'package:stea/screens/home_page/widgets/quickAccessContent.dart';
 import 'package:stea/screens/home_page/widgets/up_coming_event_widget.dart';
 import 'package:stea/screens/notification_page/Notification.dart';
-import 'package:stea/utils/app_textStyles/appTextStyle.dart';
 import 'package:stea/widgets/buildAppbarLogo.dart';
 
+import '../../core/utils/app_colors/appColors.dart';
 import '../../core/widgets/appbar_text_widget.dart';
-import '../../utils/app_colors/appColors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

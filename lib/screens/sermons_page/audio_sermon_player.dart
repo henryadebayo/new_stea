@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stea/utils/app_textStyles/appTextStyle.dart';
+import 'package:stea/core/utils/app_textStyles/appTextStyle.dart';
 
 class AudioSermonPlayer extends StatefulWidget {
   const AudioSermonPlayer({Key? key}) : super(key: key);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stea/utils/app_colors/appColors.dart';
+
+import '../app_colors/appColors.dart';
 
 class AppTextStyle {
   static const TextStyle Whitelight = TextStyle(

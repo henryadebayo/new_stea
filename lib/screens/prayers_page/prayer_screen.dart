@@ -4,7 +4,7 @@ import 'package:stea/core/widgets/secondary_appbar_text.dart';
 import 'package:stea/screens/prayers_page/widgets/button.dart';
 import 'package:stea/screens/prayers_page/widgets/textFormWidget.dart';
 
-import '../../utils/app_colors/appColors.dart';
+import '../../core/utils/app_colors/appColors.dart';
 
 class PrayerScreen extends StatelessWidget {
   const PrayerScreen({Key? key}) : super(key: key);

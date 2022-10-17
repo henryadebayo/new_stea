@@ -3,8 +3,8 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'package:stea/widgets/const.dart';
 
+import '../core/utils/app_colors/appColors.dart';
 import '../data/models/testimonyModel.dart';
-import '../utils/app_colors/appColors.dart';
 import '../view_models/testimony_view_models.dart';
 
 class AddTestimony extends StatelessWidget {

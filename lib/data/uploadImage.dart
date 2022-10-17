@@ -6,7 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:stea/widgets/bottomSheetCon.dart';
 import 'package:stea/widgets/buton.dart';
 
-import '../utils/app_colors/appColors.dart';
+import '../core/utils/app_colors/appColors.dart';
 
 class UploadImage extends StatefulWidget {
   const UploadImage({Key? key}) : super(key: key);

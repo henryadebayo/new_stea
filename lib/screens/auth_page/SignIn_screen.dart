@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stea/screens/auth_page/widgets/auth_label_widget.dart';
 
+import '../../core/utils/app_colors/appColors.dart';
 import '../../core/widgets/appbar_text_widget.dart';
 import '../../core/widgets/auth_form_widget.dart';
-import '../../utils/app_colors/appColors.dart';
 import '../bottom_navigation/bottomNavigation.dart';
 import '../prayers_page/widgets/button.dart';
 import 'SignUp_screen.dart';

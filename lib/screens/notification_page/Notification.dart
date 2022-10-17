@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stea/screens/notification_page/widget/notification_widget.dart';
 
-import '../../utils/app_colors/appColors.dart';
+import '../../core/utils/app_colors/appColors.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({Key? key}) : super(key: key);

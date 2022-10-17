@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stea/core/widgets/appCloser.dart';
 import 'package:stea/screens/sermons_page/sermons_screen.dart';
 
-import '../../utils/app_colors/appColors.dart';
+import '../../core/utils/app_colors/appColors.dart';
 import '../devotional_page/devotional_screen.dart';
 import '../home_page/home_screen.dart';
 import '../profile_page/profileScreen.dart';
