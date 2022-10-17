@@ -39,7 +39,6 @@ class _SteaAnimationState extends State<SteaAnimation>
           animationController.forward();
         }
       });
-
     animationController.forward();
   }
 
