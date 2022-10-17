@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stea/screens/auth_page/SignUp_screen.dart';
+import 'package:stea/screens/auth_page/onBoarding_screen.dart';
 
 class SteaAnimation extends StatefulWidget {
   const SteaAnimation({
@@ -32,7 +32,7 @@ class _SteaAnimationState extends State<SteaAnimation>
               if (status == AnimationStatus.completed) {
                 Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (ctx) {
-                  return SignUpScreen();
+                  return const OnBoardingScreen();
                 }));
               }
             });

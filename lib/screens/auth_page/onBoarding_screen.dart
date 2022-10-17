@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stea/screens/auth_page/SignUp_screen.dart';
 import 'package:stea/screens/prayers_page/widgets/button.dart';
 import 'package:stea/utils/app_textStyles/appTextStyle.dart';
 
 import '../../utils/app_colors/appColors.dart';
+import 'SignIn_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -83,30 +85,56 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Skip",
-                      style: AppTextStyle.BlueMedium,
-                    )),
-                SizedBox(
-                  width: 8.0.w,
-                ),
-                CustomTextButton(
-                  onSubmit: () {
-                    _controller.nextPage(
-                        duration: Duration(milliseconds: 100),
-                        curve: Curves.easeIn);
-                  },
-                  label: "Next",
-                  height: 40.0,
-                  width: 124.0.w,
-                ),
-              ],
-            ),
+            (_currentPage == pages.length - 1)
+                ? Column(
+                    children: [
+                      CustomTextButton(
+                        onSubmit: () {
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) {
+                            return SignUpScreen();
+                          }));
+                        },
+                        label: "Sign Up",
+                      ),
+                      SizedBox(
+                        height: 8.0.h,
+                      ),
+                      CustomTextButton(
+                        onSubmit: () {
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) {
+                            return SignInScreen();
+                          }));
+                        },
+                        label: "Sign In",
+                      ),
+                    ],
+                  )
+                : Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Skip",
+                            style: AppTextStyle.BlueMedium,
+                          )),
+                      SizedBox(
+                        width: 8.0.w,
+                      ),
+                      CustomTextButton(
+                        onSubmit: () {
+                          _controller.nextPage(
+                              duration: const Duration(milliseconds: 100),
+                              curve: Curves.easeIn);
+                        },
+                        label: "Next",
+                        height: 40.0,
+                        width: 124.0.w,
+                      ),
+                    ],
+                  ),
           ],
         ),
       ),
