@@ -2,7 +2,7 @@
 // import 'package:flutter/material.dart';
 //
 // import 'conWidgets.dart';
-// import 'const.dart';
+// import 'Strings.dart';
 // //
 // // class Cslider extends StatelessWidget  {
 // //   final List<Widget> items;

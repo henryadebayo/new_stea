@@ -3,9 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:stea/core/widgets/Strings.dart';
 import 'package:stea/view_models/testimony_view_models.dart';
 import 'package:stea/view_models/youTube_view_model.dart';
-import 'package:stea/widgets/const.dart';
 
 import 'screens/steaLogoAnimation.dart';
 

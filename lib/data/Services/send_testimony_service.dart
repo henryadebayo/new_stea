@@ -5,8 +5,6 @@ import 'package:stea/core/utils/constants.dart';
 
 class SendTestimonyService {
   Future<bool> sendTes(String name, details) async {
-    //  loading = true;
-    //notifyListeners();
     try {
       final Map<String, dynamic> tdata = {
         "name": name,
@@ -16,12 +14,8 @@ class SendTestimonyService {
           .post(Uri.parse(Konstants.TESTIMONY_URL), body: json.encode(tdata));
       print(response.statusCode);
       print(response.body);
-      // loading = false;
-      //notifyListeners();
       return Future.value(true);
     } catch (e) {
-      //loading=false;
-      //notifyListeners();
       print("connection error $e");
       return Future.value(false);
     }

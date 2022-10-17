@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stea/core/widgets/Strings.dart';
 import 'package:stea/widgets/buton.dart';
-import 'package:stea/widgets/const.dart';
 
 import 'auth_page/SignUp_screen.dart';
 

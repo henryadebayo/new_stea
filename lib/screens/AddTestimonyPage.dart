@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:stea/widgets/const.dart';
+import 'package:stea/core/widgets/Strings.dart';
 
 import '../core/utils/app_colors/appColors.dart';
 import '../data/models/testimonyModel.dart';
@@ -96,7 +96,6 @@ class AddTestimony extends StatelessWidget {
                     //   showLoadingIndicator(context);
                     // } else {
                     //   Navigator.of(context).pop();
-                    await testimonyVeiwModel.getTest();
                     if (testimonyVeiwModel.loadingg == true) {
                       showLoadingIndicator(context);
                     } else {

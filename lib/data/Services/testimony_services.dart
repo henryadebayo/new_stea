@@ -55,6 +55,9 @@ class TestimonyService {
     } on HttpException {
       return Failure(
           code: Konstants.NO_INTERNET, errorResponse: "No Internet Connection");
+    } on SocketException {
+      Failure(
+          code: Konstants.NO_INTERNET, errorResponse: "No Internet Connection");
     } catch (e) {
       print("${e}");
       print("connection error $e");

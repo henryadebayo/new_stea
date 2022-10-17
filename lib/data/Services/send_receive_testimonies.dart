@@ -7,7 +7,7 @@
 // import 'package:stea/models/testimonyModel.dart';
 // import 'package:http/http.dart'as http;
 // import 'package:stea/pages/AddTestimonyPage.dart';
-// import 'package:stea/widgets/const.dart';
+// import 'package:stea/widgets/Strings.dart';
 // import 'package:stea/widgets/testimonyItem.dart';
 //
 // class TestimonyScopedModel extends Model{

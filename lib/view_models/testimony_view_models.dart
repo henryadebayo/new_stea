@@ -78,13 +78,4 @@ class TestimonyViewModel extends ChangeNotifier {
     setLoading(false);
     print("This is loading state 2:::${loading}");
   }
-
-  Future getTest() {
-    setLoading(true);
-    return Future.delayed(Duration(seconds: 3), () {
-      setLoading(true);
-      notifyListeners();
-      print("Done");
-    });
-  }
 }

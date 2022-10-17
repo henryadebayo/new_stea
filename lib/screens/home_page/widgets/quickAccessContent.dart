@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stea/core/utils/app_colors/appColors.dart';
 import 'package:stea/core/utils/app_textStyles/appTextStyle.dart';
+import 'package:stea/core/widgets/Strings.dart';
 import 'package:stea/screens/prayers_page/prayer_screen.dart';
-import 'package:stea/widgets/const.dart';
 
 import '../../testimony_page/TestimonyScreen.dart';
 
