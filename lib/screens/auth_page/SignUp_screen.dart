@@ -19,95 +19,92 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final mainKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          centerTitle: true,
-          backgroundColor: AppColors.darkBlueColour,
-          title: const AppBarText(),
-        ),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Container(
-            margin: const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
-            child: Column(
-              children: <Widget>[
-                AuthLabelWidget(
-                  header: "Signing up as a member",
-                  header2:
-                      "Kindly provide us with your correct details in\nthe form below",
-                ),
-                SizedBox(height: 20.0.h),
-                Form(
-                  key: formKey,
-                  child: Column(children: <Widget>[
-                    buildFirstNameFormField(),
-                    SizedBox(
-                      height: 20.h,
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        backgroundColor: AppColors.darkBlueColour,
+        title: const AppBarText(),
+      ),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Container(
+          margin: const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
+          child: Column(
+            children: <Widget>[
+              AuthLabelWidget(
+                header: "Signing up as a member",
+                header2:
+                    "Kindly provide us with your correct details in\nthe form below",
+              ),
+              SizedBox(height: 20.0.h),
+              Form(
+                key: formKey,
+                child: Column(children: <Widget>[
+                  buildFirstNameFormField(),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  buildLastNameFormField(),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  buildEmailAddressFormField(),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  buildPhoneNumberFormField(),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  buildAddressFormField(),
+                ]),
+              ),
+              SizedBox(
+                height: 20.0.h,
+              ),
+              InkWell(
+                  onLongPress: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (ctx) {
+                      return const BottomNavigationWidget();
+                    }));
+                  },
+                  child: CustomTextButton(label: "Proceed", onSubmit: () {})),
+              SizedBox(
+                height: 10.h,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  //SizedBox(width: 10.0,),
+                  const Center(
+                    child: Text(
+                      "Already a",
+                      style: TextStyle(
+                          fontFamily: "GoogleSans", color: Colors.black),
                     ),
-                    buildLastNameFormField(),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    buildEmailAddressFormField(),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    buildPhoneNumberFormField(),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    buildAddressFormField(),
-                  ]),
-                ),
-                SizedBox(
-                  height: 20.0.h,
-                ),
-                InkWell(
-                    onLongPress: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (ctx) {
-                        return const BottomNavigationWidget();
-                      }));
+                  ),
+                  SizedBox(
+                    width: 5.0.w,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (BuildContext context) => SignInScreen()));
                     },
-                    child: CustomTextButton(label: "Proceed", onSubmit: () {})),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    //SizedBox(width: 10.0,),
-                    const Center(
-                      child: Text(
-                        "Already a",
-                        style: TextStyle(
-                            fontFamily: "GoogleSans", color: Colors.black),
-                      ),
+                    child: Text(
+                      "Member",
+                      style: TextStyle(
+                          fontFamily: "GoogleSans", color: Colors.indigo[800]),
                     ),
-                    SizedBox(
-                      width: 5.0.w,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (BuildContext context) => SignInScreen()));
-                      },
-                      child: Text(
-                        "Member",
-                        style: TextStyle(
-                            fontFamily: "GoogleSans",
-                            color: Colors.indigo[800]),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                  ],
-                )
-              ],
-            ),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                ],
+              )
+            ],
           ),
         ),
       ),
