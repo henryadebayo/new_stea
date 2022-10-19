@@ -4,8 +4,8 @@ import 'package:stea/screens/devotional_page/widgets/free_devotional_widget.dart
 import 'package:stea/screens/devotional_page/widgets/premium_devotional_widget.dart';
 
 import '../../core/utils/app_colors/appColors.dart';
+import '../../core/widgets/edge_padding.dart';
 import '../../widgets/curved_custom_tabBar.dart';
-import '../../widgets/edge_padding.dart';
 import '../sermons_page/widgets/search_field.dart';
 
 class DevotionalScreen extends StatefulWidget {

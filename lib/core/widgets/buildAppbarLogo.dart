@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 Widget buildShoppingCart() {
@@ -9,7 +8,7 @@ Widget buildShoppingCart() {
           height: 45.0,
           width: 45.0,
           decoration: BoxDecoration(
-              image: DecorationImage(
+              image: const DecorationImage(
                 image: AssetImage("assets/images/stealogo.png"),
               ),
               color: Colors.white,
@@ -23,7 +22,7 @@ Widget buildShoppingCart() {
           height: 13.0,
           width: 13.0,
           decoration: BoxDecoration(
-            image: DecorationImage(
+            image: const DecorationImage(
               image: AssetImage("assets/images/stealogo.png"),
             ),
             borderRadius: BorderRadius.circular(6.5),

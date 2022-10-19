@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:stea/screens/auth_page/onBoarding_screen.dart';
 
-class SteaAnimation extends StatefulWidget {
-  const SteaAnimation({
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({
     Key? key,
   }) : super(key: key);
 
   @override
-  _SteaAnimationState createState() => _SteaAnimationState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SteaAnimationState extends State<SteaAnimation>
+class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
   late Animation animation;
   late AnimationController animationController;

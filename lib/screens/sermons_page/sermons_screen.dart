@@ -5,8 +5,8 @@ import 'package:stea/screens/sermons_page/widgets/search_field.dart';
 import 'package:stea/screens/sermons_page/widgets/videoWidget.dart';
 
 import '../../core/utils/app_colors/appColors.dart';
+import '../../core/widgets/edge_padding.dart';
 import '../../widgets/curved_custom_tabBar.dart';
-import '../../widgets/edge_padding.dart';
 
 class SermonsScreen extends StatefulWidget {
   const SermonsScreen({Key? key}) : super(key: key);

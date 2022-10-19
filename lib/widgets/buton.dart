@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../core/utils/app_colors/appColors.dart';
-import '../screens/welcomePage.dart';
 
 class Button extends StatelessWidget {
   final String? labelText;
@@ -50,7 +49,7 @@ class WelcomeButton extends StatelessWidget {
         height: containerHeight, //60.0,
         width: containerWidth, //170.0,
         decoration: BoxDecoration(
-            color: registerButtonColour,
+            color: AppColors.ojButtonBlueColour,
             borderRadius: BorderRadius.circular(12.0.r)),
         child: Center(
           child: Text(

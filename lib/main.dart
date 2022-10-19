@@ -7,7 +7,7 @@ import 'package:stea/core/widgets/Strings.dart';
 import 'package:stea/view_models/testimony_view_models.dart';
 import 'package:stea/view_models/youTube_view_model.dart';
 
-import 'screens/steaLogoAnimation.dart';
+import 'screens/splash_screen_page/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           // home: const SelectSignUpType(),
-          home: const SteaAnimation(),
+          home: const SplashScreen(),
           //home: const BottomNavigationWidget(),
         ),
         designSize: const Size(360, 640),

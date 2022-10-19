@@ -89,25 +89,25 @@ class CarouselItems extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0)));
   }
 }
-
-class ExitWidget extends StatelessWidget {
-  const ExitWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-        title: const Text("Do you want to Exit App ?"),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: const Text("No"),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: const Text("Yes"),
-          ),
-        ]);
-  }
-}
+//
+// class ExitWidget extends StatelessWidget {
+//   const ExitWidget({
+//     Key? key,
+//   }) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return AlertDialog(
+//         title: const Text("Do you want to Exit App ?"),
+//         actions: <Widget>[
+//           TextButton(
+//             onPressed: () => Navigator.pop(context, false),
+//             child: const Text("No"),
+//           ),
+//           TextButton(
+//             onPressed: () => Navigator.pop(context, true),
+//             child: const Text("Yes"),
+//           ),
+//         ]);
+//   }
+// }

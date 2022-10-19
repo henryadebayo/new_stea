@@ -7,7 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:stea/widgets/buton.dart';
 import 'package:stea/widgets/conWidgets.dart';
 
-import '../core/utils/app_colors/appColors.dart';
+import '../../core/utils/app_colors/appColors.dart';
 
 class AboutUs extends StatelessWidget {
   const AboutUs({Key? key}) : super(key: key);
