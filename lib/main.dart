@@ -7,7 +7,7 @@ import 'package:stea/core/widgets/Strings.dart';
 import 'package:stea/view_models/testimony_view_models.dart';
 import 'package:stea/view_models/youTube_view_model.dart';
 
-import 'screens/splash_screen_page/splash_screen.dart';
+import 'core/route_helper/route_manager.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +28,12 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: ScreenUtilInit(
-        builder: (child, context) => MaterialApp(
+        builder: (child, context) => MaterialApp.router(
+          routerDelegate: RouteManager.Stearouter.routerDelegate,
+          routeInformationParser:
+              RouteManager.Stearouter.routeInformationParser,
+          routeInformationProvider:
+              RouteManager.Stearouter.routeInformationProvider,
           title: 'Stea app',
           theme: ThemeData(
             fontFamily: KfontFamily,
@@ -37,7 +42,7 @@ class MyApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           // home: const SelectSignUpType(),
-          home: const SplashScreen(),
+          // home: const SplashScreen(),
           //home: const BottomNavigationWidget(),
         ),
         designSize: const Size(360, 640),
