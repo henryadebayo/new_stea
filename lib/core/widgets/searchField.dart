@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SearchField extends StatelessWidget {
   final String? searchTxt;
 
-  SearchField({this.searchTxt});
+  const SearchField({Key? key, this.searchTxt}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Material(

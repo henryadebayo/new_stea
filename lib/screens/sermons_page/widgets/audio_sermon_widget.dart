@@ -16,7 +16,7 @@ class AudioSermonWidget extends StatelessWidget {
       ),
       title: const Text(
         "Above all principalities and powers",
-        style: AppTextStyle.BlackMedium,
+        style: AppTextStyle.blackMedium,
       ),
       subtitle: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

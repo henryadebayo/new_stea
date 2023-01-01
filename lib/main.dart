@@ -30,14 +30,14 @@ class MyApp extends StatelessWidget {
       ],
       child: ScreenUtilInit(
         builder: (child, context) => MaterialApp.router(
-          routerDelegate: RouteManager.Stearouter.routerDelegate,
+          routerDelegate: RouteManager.steaRouter.routerDelegate,
           routeInformationParser:
-              RouteManager.Stearouter.routeInformationParser,
+              RouteManager.steaRouter.routeInformationParser,
           routeInformationProvider:
-              RouteManager.Stearouter.routeInformationProvider,
+              RouteManager.steaRouter.routeInformationProvider,
           title: 'Stea app',
           theme: ThemeData(
-            fontFamily: KfontFamily,
+            fontFamily: kFontFamily,
             primarySwatch: Colors.blue,
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),

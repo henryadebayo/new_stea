@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
 class AppKiller extends StatefulWidget {
-  Widget child;
-  AppKiller({Key? key, required this.child}) : super(key: key);
+  final Widget child;
+  const AppKiller({Key? key, required this.child}) : super(key: key);
 
   @override
   State<AppKiller> createState() => _AppKillerState();
 }
 
 class _AppKillerState extends State<AppKiller> {
-  DateTime pre_backpress = DateTime.now();
+  DateTime preBackPress = DateTime.now();
   late final Widget child;
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
         onWillPop: () async {
-          final timegap = DateTime.now().difference(pre_backpress);
-          final cantExit = timegap >= Duration(seconds: 2);
-          pre_backpress = DateTime.now();
+          final timegap = DateTime.now().difference(preBackPress);
+          final cantExit = timegap >= const Duration(seconds: 2);
+          preBackPress = DateTime.now();
           if (cantExit) {
             const snack = SnackBar(
               content: Text('Press Back button again to close App '),

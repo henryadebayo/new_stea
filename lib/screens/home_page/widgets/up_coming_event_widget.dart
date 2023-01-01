@@ -29,7 +29,7 @@ class UpComingEventWidget extends StatelessWidget {
                 children: [
                   Text(
                     "Upcoming Event",
-                    style: AppTextStyle.BlueBold.copyWith(
+                    style: AppTextStyle.blueBold.copyWith(
                         fontSize: 15.0.sp, color: AppColors.darkBlueColour),
                   ),
                   SizedBox(
@@ -37,7 +37,7 @@ class UpComingEventWidget extends StatelessWidget {
                   ),
                   Text(
                     "100 random acts\nof kindness.",
-                    style: AppTextStyle.BlackBold.copyWith(fontSize: 24.0.sp),
+                    style: AppTextStyle.blackBold.copyWith(fontSize: 24.0.sp),
                   ),
                   SizedBox(
                     height: 16.0.h,
@@ -53,24 +53,24 @@ class UpComingEventWidget extends StatelessWidget {
                       ),
                       Text(
                         "Friday",
-                        style: AppTextStyle.BlackMedium.copyWith(
-                            fontSize: 16.0.sp),
+                        style: AppTextStyle.blackMedium
+                            .copyWith(fontSize: 16.0.sp),
                       ),
                       SizedBox(
                         width: 8.0.w,
                       ),
                       Text(
                         "5:30pm",
-                        style: AppTextStyle.BlackMedium.copyWith(
-                            fontSize: 16.0.sp),
+                        style: AppTextStyle.blackMedium
+                            .copyWith(fontSize: 16.0.sp),
                       ),
                       SizedBox(
                         width: 8.0.w,
                       ),
                       Text(
                         "GMT",
-                        style: AppTextStyle.BlackMedium.copyWith(
-                            fontSize: 16.0.sp),
+                        style: AppTextStyle.blackMedium
+                            .copyWith(fontSize: 16.0.sp),
                       ),
                     ],
                   ),
@@ -88,8 +88,8 @@ class UpComingEventWidget extends StatelessWidget {
                       ),
                       Text(
                         "No: 5 Gold Coast Road, SG.",
-                        style: AppTextStyle.BlackMedium.copyWith(
-                            fontSize: 16.0.sp),
+                        style: AppTextStyle.blackMedium
+                            .copyWith(fontSize: 16.0.sp),
                       ),
                     ],
                   ),
@@ -100,11 +100,11 @@ class UpComingEventWidget extends StatelessWidget {
                 children: [
                   Text(
                     "20",
-                    style: AppTextStyle.BlackBold.copyWith(fontSize: 24.0.sp),
+                    style: AppTextStyle.blackBold.copyWith(fontSize: 24.0.sp),
                   ),
                   Text(
                     "Sep",
-                    style: AppTextStyle.BlackMedium.copyWith(fontSize: 20.0.sp),
+                    style: AppTextStyle.blackMedium.copyWith(fontSize: 20.0.sp),
                   ),
                 ],
               ),

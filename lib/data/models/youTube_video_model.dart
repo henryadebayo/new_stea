@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final videoModel = videoModelFromJson(jsonString);
-
 import 'dart:convert';
 
 YTVideoModel videoModelFromJson(String str) =>
@@ -53,13 +49,13 @@ class VideoItem {
   String? kind;
   String? etag;
   String? id;
-  video? snippet;
+  Video? snippet;
 
   factory VideoItem.fromJson(Map<String, dynamic> json) => VideoItem(
         kind: json["kind"],
         etag: json["etag"],
         id: json["id"],
-        snippet: video.fromJson(json["snippet"]),
+        snippet: Video.fromJson(json["snippet"]),
       );
 
   Map<String, dynamic> toJson() => {
@@ -70,8 +66,8 @@ class VideoItem {
       };
 }
 
-class video {
-  video({
+class Video {
+  Video({
     this.publishedAt,
     this.channelId,
     this.title,
@@ -85,19 +81,19 @@ class video {
     this.videoOwnerChannelId,
   });
 
-  DateTime? publishedAt;
-  String? channelId;
-  String? title;
-  String? description;
-  Thumbnails? thumbnails;
-  String? channelTitle;
-  String? playlistId;
-  int? position;
-  ResourceId? resourceId;
-  String? videoOwnerChannelTitle;
-  String? videoOwnerChannelId;
+  final DateTime? publishedAt;
+  final String? channelId;
+  final String? title;
+  final String? description;
+  final Thumbnails? thumbnails;
+  final String? channelTitle;
+  final String? playlistId;
+  final int? position;
+  final ResourceId? resourceId;
+  final String? videoOwnerChannelTitle;
+  final String? videoOwnerChannelId;
 
-  factory video.fromJson(Map<String, dynamic> json) => video(
+  factory Video.fromJson(Map<String, dynamic> json) => Video(
         publishedAt: DateTime.parse(json["publishedAt"]),
         channelId: json["channelId"],
         title: json["title"],

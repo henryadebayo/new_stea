@@ -1,5 +1,4 @@
-class carouselItemsClass{
+class CarouselItemsClass {
   final String imagePath;
-  carouselItemsClass({required this.imagePath});
+  const CarouselItemsClass({required this.imagePath});
 }
-

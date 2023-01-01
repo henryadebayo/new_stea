@@ -25,7 +25,7 @@ class QuickAccessContent extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(labelText!, style: AppTextStyle.BlackMedium),
+                Text(labelText!, style: AppTextStyle.blackMedium),
               ],
             ),
           ),
@@ -139,7 +139,7 @@ _bottomSheet(context) {
                         ),
                       ),
                       Text(
-                        KchurchAcc,
+                        kChurchAcc,
                         style: TextStyle(
                           color: AppColors.ojDarkBlueColour,
                           fontSize: 16.0,
@@ -158,7 +158,7 @@ _bottomSheet(context) {
                         ),
                       ),
                       Text(
-                        KbankAccName,
+                        kBankAccName,
                         style: TextStyle(
                           color: AppColors.ojDarkBlueColour,
                           fontSize: 16.0,
@@ -177,7 +177,7 @@ _bottomSheet(context) {
                         ),
                       ),
                       Text(
-                        KbankName,
+                        kBankName,
                         style: TextStyle(
                           color: AppColors.ojDarkBlueColour,
                           fontSize: 16.0,
@@ -206,7 +206,7 @@ _bottomSheet(context) {
                         ),
                       ),
                       Text(
-                        KchurchAcc,
+                        kChurchAcc,
                         style: TextStyle(
                           color: AppColors.ojDarkBlueColour,
                           fontSize: 16.0,
@@ -225,7 +225,7 @@ _bottomSheet(context) {
                         ),
                       ),
                       Text(
-                        KbankAccName,
+                        kBankAccName,
                         style: TextStyle(
                           color: AppColors.ojDarkBlueColour,
                           fontSize: 16.0,
@@ -244,7 +244,7 @@ _bottomSheet(context) {
                         ),
                       ),
                       Text(
-                        KbankName,
+                        kBankName,
                         style: TextStyle(
                           color: AppColors.ojDarkBlueColour,
                           fontSize: 16.0,
@@ -269,7 +269,7 @@ _bottomSheet(context) {
                     height: 10.0,
                   ),
                   const Text(
-                    KdOfF,
+                    kDOfF,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 15.0,

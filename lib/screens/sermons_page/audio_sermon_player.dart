@@ -21,7 +21,7 @@ class _AudioSermonPlayerState extends State<AudioSermonPlayer> {
           leading: const Icon(Icons.arrow_back_ios),
           title: const Text(
             "Now Playing",
-            style: AppTextStyle.BlackMedium,
+            style: AppTextStyle.blackMedium,
           ),
           centerTitle: true,
           actions: [

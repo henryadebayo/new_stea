@@ -12,7 +12,7 @@ class YoutubeServices {
       "part": "snippet",
       "playlistId": playListId,
       "pageToken": pageToken,
-      "key": Konstants.YT_API_KEY,
+      "key": Constants.youtubeApiKey,
     };
 
     Map<String, String> headers = {
@@ -20,7 +20,7 @@ class YoutubeServices {
     };
 
     Uri uri = Uri.http(
-        Konstants.YT_BASE_URL, "/youtube/v3/playlistItems", parameters);
+        Constants.youtubeBaseUrl, "/youtube/v3/playlistItems", parameters);
 
     try {
       http.Response response = await http.get(uri, headers: headers);
@@ -36,7 +36,7 @@ class YoutubeServices {
               "Failed to Upload Testimony, check internet connection");
     } on HttpException {
       return Failure(
-          code: Konstants.NO_INTERNET, errorResponse: "No Internet Connection");
+          code: Constants.noInternet, errorResponse: "No Internet Connection");
     } catch (e) {
       print(e.toString());
     }

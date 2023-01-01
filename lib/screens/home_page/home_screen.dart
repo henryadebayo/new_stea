@@ -77,12 +77,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(
                         "Welcome",
                         style:
-                            AppTextStyle.Blacklight.copyWith(fontSize: 16.0.sp),
+                            AppTextStyle.blackLight.copyWith(fontSize: 16.0.sp),
                       ),
                       Text(
                         "Henry Adebayo",
-                        style: AppTextStyle.BlackMedium.copyWith(
-                            fontSize: 18.0.sp),
+                        style: AppTextStyle.blackMedium
+                            .copyWith(fontSize: 18.0.sp),
                       ),
                     ],
                   ),
@@ -149,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text("Today's Bible verse",
                       style:
-                          AppTextStyle.BlackMedium.copyWith(fontSize: 16.0.sp)),
+                          AppTextStyle.blackMedium.copyWith(fontSize: 16.0.sp)),
                   SizedBox(
                       height: 80.0.h,
                       width: 330.0.w,
@@ -163,10 +163,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("Quick Access",
-                          style: AppTextStyle.BlackMedium.copyWith(
-                              fontSize: 16.0.sp)),
+                          style: AppTextStyle.blackMedium
+                              .copyWith(fontSize: 16.0.sp)),
                       Text("Swipe >>",
-                          style: AppTextStyle.BlueMedium.copyWith(
+                          style: AppTextStyle.blueMedium.copyWith(
                               fontSize: 16.0.sp,
                               color: AppColors.ojBlueColour)),
                     ],
@@ -178,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(height: 30.0.h),
                   Text("Upcoming Programs/Services",
                       style:
-                          AppTextStyle.BlackMedium.copyWith(fontSize: 16.0.sp)),
+                          AppTextStyle.blackMedium.copyWith(fontSize: 16.0.sp)),
                   SizedBox(
                     height: 10.0.h,
                   ),

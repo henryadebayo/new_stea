@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EdgePadding extends StatelessWidget {
-  Widget child;
-  EdgePadding({required this.child, Key? key}) : super(key: key);
+  final Widget child;
+  const EdgePadding({required this.child, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -58,7 +58,7 @@ class _SignUpSelectionWidgetState extends State<SignUpSelectionWidget> {
               ),
               Text(
                 widget.title,
-                style: AppTextStyle.BlackBold,
+                style: AppTextStyle.blackBold,
               ),
               SizedBox(
                 height: 8.0.h,
@@ -66,7 +66,7 @@ class _SignUpSelectionWidgetState extends State<SignUpSelectionWidget> {
               Text(
                 widget.subTitle,
                 textAlign: TextAlign.center,
-                style: AppTextStyle.Blacklight,
+                style: AppTextStyle.blackLight,
               ),
             ],
           ),

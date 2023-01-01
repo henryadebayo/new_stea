@@ -117,7 +117,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           onPressed: () {},
                           child: Text(
                             "Skip",
-                            style: AppTextStyle.BlueMedium,
+                            style: AppTextStyle.blueMedium,
                           )),
                       SizedBox(
                         width: 8.0.w,
@@ -162,14 +162,14 @@ class OnboardingItemWidget extends StatelessWidget {
         ),
         Text(
           "Revive your faith in God’s daily\nword.",
-          style: AppTextStyle.BlackMedium.copyWith(fontSize: 20.0.sp),
+          style: AppTextStyle.blackMedium.copyWith(fontSize: 20.0.sp),
         ),
         SizedBox(
           height: 8.0.h,
         ),
         Text(
           "Listen and Watch sermons, Get books written By Bishop Olowo and other anointed men of God.",
-          style: AppTextStyle.Blacklight.copyWith(color: Colors.grey[400]),
+          style: AppTextStyle.blackLight.copyWith(color: Colors.grey[400]),
         ),
       ],
     );

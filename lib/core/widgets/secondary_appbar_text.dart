@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SecondaryAppBarText extends StatelessWidget {
   final String title;
-  SecondaryAppBarText({
+  const SecondaryAppBarText({
     Key? key,
     required this.title,
   }) : super(key: key);

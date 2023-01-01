@@ -13,7 +13,7 @@ class AppBarText extends StatelessWidget {
     return Text(
       "STEA",
       style: TextStyle(
-          fontFamily: KfontFamily,
+          fontFamily: kFontFamily,
           letterSpacing: 18.0,
           fontWeight: FontWeight.bold,
           fontSize: 20.0.sp),

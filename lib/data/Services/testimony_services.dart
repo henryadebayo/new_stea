@@ -10,7 +10,7 @@ import 'api_status.dart';
 class TestimonyService {
   static Future<Object?> getTestimonies() async {
     try {
-      var url = Uri.parse(Konstants.TESTIMONY_URL);
+      var url = Uri.parse(Constants.testimonyBaseUrl);
       var response = await http.get(url);
       if (response.statusCode == 200) {
         final Map<String, dynamic> testimonyPayload = jsonDecode(response.body);
@@ -28,10 +28,10 @@ class TestimonyService {
         return Success(response: testt.toList());
       }
       return Failure(
-          code: Konstants.HTTPEXCEPTION, errorResponse: "invalid response");
+          code: Constants.httpException, errorResponse: "invalid response");
     } on HttpException {
       return Failure(
-          code: Konstants.NO_INTERNET, errorResponse: "No Internet Connection");
+          code: Constants.noInternet, errorResponse: "No Internet Connection");
     } catch (e) {}
   }
 
@@ -41,8 +41,9 @@ class TestimonyService {
         "name": name,
         "details": details,
       };
-      http.Response response = await http
-          .post(Uri.parse(Konstants.TESTIMONY_URL), body: json.encode(tdata));
+      http.Response response = await http.post(
+          Uri.parse(Constants.testimonyBaseUrl),
+          body: json.encode(tdata));
       print("this is status code:::: ${response.statusCode}");
       print("THIS IS RES.BODDY ::::${response.body}");
 
@@ -54,10 +55,10 @@ class TestimonyService {
               "Failed to Upload Testimony, check internet connection");
     } on HttpException {
       return Failure(
-          code: Konstants.NO_INTERNET, errorResponse: "No Internet Connection");
+          code: Constants.noInternet, errorResponse: "No Internet Connection");
     } on SocketException {
       Failure(
-          code: Konstants.NO_INTERNET, errorResponse: "No Internet Connection");
+          code: Constants.noInternet, errorResponse: "No Internet Connection");
     } catch (e) {
       print("${e}");
       print("connection error $e");

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-const KfontFamily = "GoogleSans";
-const KsteaLogo = AssetImage("images/stealogo.png");
-const KchurchAcc = "123456789";
-const KbankAccName = "Strong Tower Evangelical Assembly";
-const KbankName = "First Bank Plc.";
-const KdOfF = "08186746590 or 09076429601";
+const kFontFamily = "GoogleSans";
+const kSteaLogo = AssetImage("images/stealogo.png");
+const kChurchAcc = "123456789";
+const kBankAccName = "Strong Tower Evangelical Assembly";
+const kBankName = "First Bank Plc.";
+const kDOfF = "08186746590 or 09076429601";
