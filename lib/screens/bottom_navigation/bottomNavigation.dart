@@ -10,7 +10,7 @@ import '../profile_page/profileScreen.dart';
 class BottomNavigationWidget extends StatefulWidget {
   final String? userName;
 
-  const BottomNavigationWidget({this.userName});
+  const BottomNavigationWidget({Key? key, this.userName}) : super(key: key);
 
   @override
   _BottomNavigationWidgetState createState() => _BottomNavigationWidgetState();

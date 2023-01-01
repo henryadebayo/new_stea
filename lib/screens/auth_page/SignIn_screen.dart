@@ -27,7 +27,7 @@ class SignInScreen extends StatelessWidget {
         margin: const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
         child: Column(
           children: <Widget>[
-            AuthLabelWidget(
+            const AuthLabelWidget(
               header: "Sign In",
               header2: "Kindly fill in your correct login details.",
             ),

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,7 +12,7 @@ class CustomSocialTextButton extends StatelessWidget {
       this.width,
       this.height,
       this.logo,
-      this.LogoSpacewidth,
+      this.logoSpaceWidth,
       required this.onSubmit})
       : super(key: key);
 
@@ -21,7 +20,7 @@ class CustomSocialTextButton extends StatelessWidget {
   final Color? textColor;
   final String? label;
   final double? width;
-  final double? LogoSpacewidth;
+  final double? logoSpaceWidth;
   final double? height;
   final String? logo;
   var onSubmit;
@@ -41,7 +40,7 @@ class CustomSocialTextButton extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               SizedBox(
-                width: LogoSpacewidth ?? 10.0.w,
+                width: logoSpaceWidth ?? 10.0.w,
               ),
               Text(
                 "$label",

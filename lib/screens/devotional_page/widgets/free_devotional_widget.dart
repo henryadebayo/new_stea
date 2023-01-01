@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../prayers_page/widgets/button.dart';
 
 class FreeDevoWidget extends StatelessWidget {
@@ -10,8 +10,7 @@ class FreeDevoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-      Container(
+    return Container(
       height: 200.h,
       width: 150.w,
       decoration: const BoxDecoration(
@@ -64,7 +63,8 @@ class FreeDevoWidget extends StatelessWidget {
                     height: 25.0.h,
                     width: 100.0.w,
                     label: "Read",
-                      onSubmit: (){},),
+                    onSubmit: () {},
+                  ),
                 ],
               ),
             ),
@@ -74,4 +74,3 @@ class FreeDevoWidget extends StatelessWidget {
     );
   }
 }
-

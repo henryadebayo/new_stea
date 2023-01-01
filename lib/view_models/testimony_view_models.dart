@@ -11,8 +11,9 @@ class TestimonyViewModel extends ChangeNotifier {
   List<TestimonyModel> _testimonyModel = [];
   TestimonyError? _testimonyError;
   late Widget _testimonyPosted;
-  String? _details;
-  String? _name;
+
+  /// String? _details;
+  /// String? _name;
 
   TestimonyViewModel() {
     getTestimony();
@@ -70,12 +71,12 @@ class TestimonyViewModel extends ChangeNotifier {
 
   Future sendTestimony(name, details) async {
     setLoading(true);
-    print("This is loading state 1:::${loading}");
+    print("This is loading state 1:::$loading");
     var response = await TestimonyService.sendTes(name, details);
     if (response is Success) {
-      String message = response.response as String;
+      /// String message = response.response as String;
     }
     setLoading(false);
-    print("This is loading state 2:::${loading}");
+    print("This is loading state 2:::$loading");
   }
 }

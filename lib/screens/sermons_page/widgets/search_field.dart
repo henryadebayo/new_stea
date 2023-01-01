@@ -4,12 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/widgets/auth_form_widget.dart';
 
 class SearchField2 extends StatelessWidget {
-  String hintT;
-  TextInputType inputType;
-  int? mxLine;
-  int? mnLine;
+  final String hintT;
+  final TextInputType inputType;
+  final int? mxLine;
+  final int? mnLine;
 
-  SearchField2(
+  const SearchField2(
       {required this.hintT,
       required this.inputType,
       this.mnLine,

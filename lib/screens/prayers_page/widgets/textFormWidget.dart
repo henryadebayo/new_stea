@@ -4,13 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/widgets/auth_form_widget.dart';
 
 class TextInput extends StatelessWidget {
-  String hintT;
-  String label;
-  TextInputType inputType;
-  int? mxLine;
-  int? mnLine;
+  final String hintT;
+  final String label;
+  final TextInputType inputType;
+  final int? mxLine;
+  final int? mnLine;
 
-  TextInput(
+  const TextInput(
       {required this.hintT,
       required this.label,
       required this.inputType,
@@ -26,7 +26,8 @@ class TextInput extends StatelessWidget {
       children: [
         Text(
           label,
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style:
+              const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         SizedBox(
           height: 8.0.h,
@@ -38,7 +39,7 @@ class TextInput extends StatelessWidget {
             decoration: InputDecoration(
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8.0.r),
-                borderSide: BorderSide(
+                borderSide: const BorderSide(
                   color: Color(0xFF0E3E3E3),
                 ),
               ),

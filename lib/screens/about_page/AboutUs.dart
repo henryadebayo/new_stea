@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:stea/widgets/buton.dart';
@@ -79,14 +78,14 @@ class AboutUs extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 15.0.h),
-              AboutUsNameH(
+              const AboutUsNameH(
                 labelName: "Bishop Ralph Olufemi Olowo",
               ),
               SizedBox(height: 5.0.h),
-              AboutUsImageContainer(
+              const AboutUsImageContainer(
                 imageName: "assets/images/DAD5.jpg",
               ),
-              AboutUsInfo(),
+              const AboutUsInfo(),
               SizedBox(
                 height: 50.0.h,
               ),
@@ -99,12 +98,12 @@ class AboutUs extends StatelessWidget {
               SizedBox(
                 height: 50.0.h,
               ),
-              AboutUsNameH(
+              const AboutUsNameH(
                 labelName: "Rev.Lois Ibilola Olowo",
               ),
               SizedBox(height: 5.0.h),
-              AboutUsImageContainer(imageName: "images/mum2.jpg"),
-              AboutUsInfo(),
+              const AboutUsImageContainer(imageName: "images/mum2.jpg"),
+              const AboutUsInfo(),
               SizedBox(
                 height: 50.0.h,
               ),
@@ -117,12 +116,12 @@ class AboutUs extends StatelessWidget {
               SizedBox(
                 height: 50.0.h,
               ),
-              AboutUsNameH(
+              const AboutUsNameH(
                 labelName: "Bishop David Bakare",
               ),
               SizedBox(height: 5.0.h),
-              AboutUsImageContainer(imageName: "assets/images/bb.jpg"),
-              AboutUsInfo(),
+              const AboutUsImageContainer(imageName: "assets/images/bb.jpg"),
+              const AboutUsInfo(),
               SizedBox(
                 height: 50.0.h,
               ),

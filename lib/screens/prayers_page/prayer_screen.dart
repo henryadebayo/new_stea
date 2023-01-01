@@ -46,19 +46,19 @@ class PrayerScreen extends StatelessWidget {
               Form(
                 child: Column(
                   children: [
-                    TextInput(
+                    const TextInput(
                       label: "Name",
                       hintT: 'Fill in your full name',
                       inputType: TextInputType.text,
                     ),
                     SizedBox(height: 16.0.h),
-                    TextInput(
+                    const TextInput(
                       label: "Phone number",
                       hintT: 'Enter your full name',
                       inputType: TextInputType.number,
                     ),
                     SizedBox(height: 16.0.h),
-                    TextInput(
+                    const TextInput(
                       mnLine: 5,
                       label: "prayer request",
                       hintT: 'Write your prayer request here',

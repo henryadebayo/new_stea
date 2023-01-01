@@ -5,8 +5,8 @@ import '../data/Services/youTube_services.dart';
 import '../data/models/youTube_video_model.dart';
 
 class YouTubeViewModel extends ChangeNotifier {
-  String _playListId = "PLkw_FlxjTTqd1QpoMmI9mfJ0hP50tCMUx";
-  String _nextpageToken = "";
+  final String _playListId = "PLkw_FlxjTTqd1QpoMmI9mfJ0hP50tCMUx";
+  String _nextPageToken = "";
 
   // create loading variable
   bool _loading = false;
@@ -39,13 +39,13 @@ class YouTubeViewModel extends ChangeNotifier {
     setLoading(true);
 
     var res =
-        await YoutubeServices.getYouTubeVideos(_playListId, _nextpageToken);
+        await YoutubeServices.getYouTubeVideos(_playListId, _nextPageToken);
     print("doing something");
     if (res is Success) {
       YTVideoModel data = videoModelFromJson(res.response.toString());
       _yTVideos.addAll(data.items as List<YTVideoModel>);
       print("THIS IS YOUTUBE PAYLOAD ${data}");
-      _nextpageToken = data.nextPageToken!;
+      _nextPageToken = data.nextPageToken!;
     }
     print("done");
     setLoading(false);

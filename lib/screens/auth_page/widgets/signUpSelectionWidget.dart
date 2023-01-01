@@ -7,11 +7,12 @@ import '../../../core/utils/app_textStyles/appTextStyle.dart';
 class SignUpSelectionWidget extends StatefulWidget {
   final String title;
   final String subTitle;
-  bool isSelected = false;
+  late bool? isSelected;
 
   SignUpSelectionWidget({
     required this.title,
     required this.subTitle,
+    this.isSelected = false,
     Key? key,
   }) : super(key: key);
 

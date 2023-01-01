@@ -1,6 +1,3 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,10 +8,10 @@ class PremiumDevotionalWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Container(
+    return Container(
       height: 200.h,
       width: 150.w,
-      decoration:  const BoxDecoration(
+      decoration: const BoxDecoration(
         boxShadow: [
           BoxShadow(
               spreadRadius: 0.1,
@@ -62,7 +59,10 @@ class PremiumDevotionalWidget extends StatelessWidget {
                   ),
                   const Text(
                     "N2,500",
-                    style: TextStyle(color: Colors.black, fontSize: 12.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 8.0.h,
@@ -71,7 +71,8 @@ class PremiumDevotionalWidget extends StatelessWidget {
                     height: 25.0.h,
                     width: 100.0.w,
                     label: "Purchase",
-                    onSubmit: (){},),
+                    onSubmit: () {},
+                  ),
                 ],
               ),
             ),

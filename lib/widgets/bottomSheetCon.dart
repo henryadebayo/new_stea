@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class bottomSheetCon extends StatelessWidget {
-  final IconData;
-  final String? Name;
-  bottomSheetCon({this.Name, this.IconData});
+class BottomSheetCon extends StatelessWidget {
+  final IconData? iconData;
+  final String? name;
+  const BottomSheetCon({Key? key, this.name, this.iconData}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,16 +15,16 @@ class bottomSheetCon extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
-            IconData,
+            iconData,
             color: Colors.white,
             size: 70.0,
           ),
-          SizedBox(
+          const SizedBox(
             height: 15.0,
           ),
           Text(
-            Name!,
-            style: TextStyle(color: Colors.white, fontSize: 20.0),
+            name!,
+            style: const TextStyle(color: Colors.white, fontSize: 20.0),
           )
         ],
       ),

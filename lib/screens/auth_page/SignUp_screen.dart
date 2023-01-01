@@ -10,6 +10,8 @@ import '../../core/widgets/appbar_text_widget.dart';
 import 'SignIn_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
+
   @override
   _SignUpScreenState createState() => _SignUpScreenState();
 }
@@ -32,7 +34,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           margin: const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
           child: Column(
             children: <Widget>[
-              AuthLabelWidget(
+              const AuthLabelWidget(
                 header: "Signing up as a member",
                 header2:
                     "Kindly provide us with your correct details in\nthe form below",

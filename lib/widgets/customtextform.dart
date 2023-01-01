@@ -1,38 +1,39 @@
 import 'package:flutter/material.dart';
 
-
 class CustomTextFormFeild extends StatelessWidget {
-
   final String? hintText;
-  final int? maxlines;
+  final int? maxLines;
   final int? minLines;
   final int? maxLenght;
-  var onSubmitted;
- var validatorr;
+  var onSubmited;
+  var validatorr;
 
-  CustomTextFormFeild({Key? key, this.hintText, this.maxlines, this.minLines, this.maxLenght, this.onSubmitted, this.validatorr})
+  CustomTextFormFeild(
+      {Key? key,
+      this.hintText,
+      this.maxLines,
+      this.minLines,
+      this.maxLenght,
+      this.onSubmited,
+      this.validatorr})
       : super(key: key);
 
-
   @override
-
   Widget build(BuildContext context) {
     return TextFormField(
       //expands: true,
-      maxLines: maxlines,
+      maxLines: maxLines,
       minLines: minLines,
       decoration: InputDecoration(
           labelText: hintText,
-         // hintStyle: TextStyle(),
+          // hintStyle: TextStyle(),
           focusColor: Colors.red,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20.0),
-
-          )
-      ),
+          )),
       maxLength: maxLenght,
-      onSaved: onSubmitted,
-        validator: validatorr,
+      onSaved: onSubmited,
+      validator: validatorr,
     );
   }
-  }
+}

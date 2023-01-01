@@ -41,7 +41,7 @@ class _SermonsScreenState extends State<SermonsScreen> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30.0.r),
                     color: Colors.grey[200]),
-                child: CustomCurvedTabBar(
+                child: const CustomCurvedTabBar(
                   firstLabel: "Video sermons",
                   secondLabel: "Audio Board",
                 ),
@@ -49,7 +49,7 @@ class _SermonsScreenState extends State<SermonsScreen> {
               SizedBox(
                 height: 16.0.h,
               ),
-              SearchField2(
+              const SearchField2(
                 hintT: 'Search Sermon',
                 inputType: TextInputType.text,
               ),

@@ -1,14 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../core/utils/app_colors/appColors.dart';
 
 class CustomCurvedTabBar extends StatelessWidget {
-  String firstLabel;
-  String secondLabel;
+  final String firstLabel;
+  final String secondLabel;
 
-  CustomCurvedTabBar({
+  const CustomCurvedTabBar({
     required this.firstLabel,
     required this.secondLabel,
     Key? key,

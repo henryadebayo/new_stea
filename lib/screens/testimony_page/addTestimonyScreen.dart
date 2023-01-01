@@ -46,13 +46,13 @@ class AddTestimonyScreen extends StatelessWidget {
               Form(
                 child: Column(
                   children: [
-                    TextInput(
+                    const TextInput(
                       label: "Name",
                       hintT: 'Fill in your full name',
                       inputType: TextInputType.text,
                     ),
                     SizedBox(height: 24.0.h),
-                    TextInput(
+                    const TextInput(
                       mnLine: 5,
                       label: "Testimony",
                       hintT: 'Write your testimony request here',

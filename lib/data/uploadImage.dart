@@ -1,8 +1,5 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:stea/widgets/bottomSheetCon.dart';
 import 'package:stea/widgets/buton.dart';
 
@@ -16,19 +13,19 @@ class UploadImage extends StatefulWidget {
 }
 
 class _UploadImageState extends State<UploadImage> {
-  late File _imageFile;
-  final _picker = ImagePicker();
+  /// late File _imageFile;
+  //  final _picker = ImagePicker();
 
   Future getImage(bool isCamera) async {
-    File image;
-    if (isCamera) {
-      image = (await _picker.pickImage(source: ImageSource.camera)) as File;
-    } else {
-      image = (await _picker.pickImage(source: ImageSource.gallery)) as File;
-    }
-    setState(() {
-      _imageFile = image;
-    });
+    // File image;
+    // if (isCamera) {
+    //   image = (await _picker.pickImage(source: ImageSource.camera)) as File;
+    // } else {
+    //   image = (await _picker.pickImage(source: ImageSource.gallery)) as File;
+    // }
+    // setState(() {
+    //   _imageFile = image;
+    // });
   }
 
   @override
@@ -74,7 +71,7 @@ class _UploadImageState extends State<UploadImage> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 // mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20.0,
                                   ),
                                   Container(
@@ -86,7 +83,7 @@ class _UploadImageState extends State<UploadImage> {
                                       color: AppColors.darkBlueColour,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 50.0,
                                   ),
                                   Text(
@@ -108,14 +105,14 @@ class _UploadImageState extends State<UploadImage> {
                                               onTap: () {
                                                 getImage(true);
                                               },
-                                              child: bottomSheetCon(
-                                                Name: "Camera",
-                                                IconData:
+                                              child: const BottomSheetCon(
+                                                name: "Camera",
+                                                iconData:
                                                     FontAwesomeIcons.camera,
                                               ),
                                             ),
                                           )),
-                                          SizedBox(
+                                          const SizedBox(
                                             width: 20.0,
                                           ),
                                           Expanded(
@@ -123,9 +120,9 @@ class _UploadImageState extends State<UploadImage> {
                                             onTap: () {
                                               getImage(false);
                                             },
-                                            child: bottomSheetCon(
-                                              Name: "Gallery",
-                                              IconData: FontAwesomeIcons.images,
+                                            child: const BottomSheetCon(
+                                              name: "Gallery",
+                                              iconData: FontAwesomeIcons.images,
                                             ),
                                           )),
                                         ],

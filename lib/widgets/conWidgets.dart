@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../core/utils/app_colors/appColors.dart';
 
 class AboutUsImageContainer extends StatelessWidget {
-  String imageName;
-  AboutUsImageContainer({
+  final String imageName;
+  const AboutUsImageContainer({
     Key? key,
     required this.imageName,
   }) : super(key: key);
@@ -26,8 +25,8 @@ class AboutUsImageContainer extends StatelessWidget {
 }
 
 class AboutUsNameH extends StatelessWidget {
-  String labelName;
-  AboutUsNameH({Key? key, required this.labelName}) : super(key: key);
+  final String labelName;
+  const AboutUsNameH({Key? key, required this.labelName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

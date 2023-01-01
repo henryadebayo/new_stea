@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AuthLabelWidget extends StatelessWidget {
-  String header;
-  String header2;
-  AuthLabelWidget({
+  final String header;
+  final String header2;
+  const AuthLabelWidget({
     required this.header,
     required this.header2,
     Key? key,

@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import 'package:stea/screens/testimony_page/widgets/testimonyCard.dart';
 
 import '../../core/utils/app_colors/appColors.dart';
-import '../../data/Services/testimony_services.dart';
 import '../../view_models/testimony_view_models.dart';
 import 'addTestimonyScreen.dart';
 
@@ -17,7 +16,6 @@ class TestimonyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TestimonyService testimonyService = TestimonyService();
     TestimonyViewModel testimonyVeiwModel = context.watch<TestimonyViewModel>();
 
     return Scaffold(
@@ -79,21 +77,19 @@ class TestimonyScreen extends StatelessWidget {
       );
     }
     if (testimonyVeiwModel.testimonyError != null) {
-      return Container(
-        child: AlertDialog(
-          content: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(
-                width: 16,
-              ),
-              Text(
-                "Can't Load Testimony slide down to refresh...",
-                style: TextStyle(color: AppColors.darkBlueColour),
-              ),
-            ],
-          ),
+      return AlertDialog(
+        content: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(
+              width: 16,
+            ),
+            Text(
+              "Can't Load Testimony slide down to refresh...",
+              style: TextStyle(color: AppColors.darkBlueColour),
+            ),
+          ],
         ),
       );
     }

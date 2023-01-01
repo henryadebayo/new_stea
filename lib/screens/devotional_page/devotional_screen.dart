@@ -41,7 +41,7 @@ class _DevotionalScreenState extends State<DevotionalScreen> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30.0.r),
                       color: Colors.grey[200]),
-                  child: CustomCurvedTabBar(
+                  child: const CustomCurvedTabBar(
                     firstLabel: "Free Dev.",
                     secondLabel: "Premium Dev.",
                   ),
